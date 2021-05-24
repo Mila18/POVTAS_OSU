@@ -1,0 +1,90 @@
+﻿@model POVTAS_OSU.Models.ChairConsist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChairConsist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AcademicDegree.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcademicDegree.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AcademicTitle.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AcademicTitle.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activity.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activity.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatronymicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatronymicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkExperience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkExperience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChairId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChairId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

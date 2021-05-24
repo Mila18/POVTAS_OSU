@@ -1,0 +1,46 @@
+﻿@model IEnumerable<POVTAS_OSU.Models.Contact>
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<style>
+    .table{margin-top:50px}
+</style>
+
+<table class="table">
+    <tr>
+        <th>
+            Адрес
+        </th>
+        <th>
+            Телефон
+        </th>
+        <th>
+            E-mail
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <a href="mailto:@Html.DisplayFor(modelItem => item.Email)">@Html.DisplayFor(modelItem => item.Email)</a>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.5525780268317!2d55.105821815698405!3d51.777786179680504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x417bf0da65737a05%3A0x5cfe0bb1b0344a3!2z0J7RgNC10L3QsdGD0YDQs9GB0LrQuNC5INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90YvQuSDRg9C90LjQstC10YDRgdC40YLQtdGC!5e0!3m2!1sru!2sru!4v1621844986789!5m2!1sru!2sru" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></center>

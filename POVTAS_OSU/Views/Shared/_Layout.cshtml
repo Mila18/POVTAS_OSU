@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--@Html.ActionLink("Кафедра ПОВТАС", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })-->
+            </div>
+            <p>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Новости", "", "Home")</li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Меню<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Образовательные программы", "", "Home")</li>
+                                <li>@Html.ActionLink("НИР и мероприятия", "", "Home")</li>
+                                <li>@Html.ActionLink("Студентам, выпусникам", "", "Home")</li>
+                                <li>@Html.ActionLink("Школьникам", "", "Home")</li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">АдминПанель<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Состав кафедры", "Index", "ChairConsists")</li>
+                                <li>@Html.ActionLink("Новости", "Index", "Posts")</li>
+                                <li>@Html.ActionLink("Календарь мероприятий", "Index", "CalendarOfEvents")</li>
+                                <li>@Html.ActionLink("Контакты", "Index", "Contacts")</li>
+                                <li>@Html.ActionLink("Дисциплины", "Index", "Disciplines")</li>
+                                <li>@Html.ActionLink("Направления подготовки", "Index", "EducationFields")</li>
+                                <li>@Html.ActionLink("Отчеты о мероприятиях", "Index", "EventReports")</li>
+                                <li>@Html.ActionLink("МТО", "Index", "MaterialSupports")</li>
+                                <li>@Html.ActionLink("Аудитории", "Index", "Classrooms")</li>
+                                <li>@Html.ActionLink("Должности", "Index", "Positions")</li>
+                                <li>@Html.ActionLink("Документы", "Index", "Documents")</li>
+                                <li>@Html.ActionLink("Техническое оснащение", "Index", "TechnicalFacilities")</li>
+                                <li>@Html.ActionLink("Виды деятельности", "Index", "Activities")</li>
+                                <li>@Html.ActionLink("Ученое звание", "Index", "AcademicTitles")</li>
+                                <li>@Html.ActionLink("Ученая степень", "Index", "AcademicDegrees")</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </p>
+            
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
