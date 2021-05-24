@@ -43,6 +43,8 @@ namespace POVTAS_OSU.Controllers
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title");
             ViewBag.ActivityId = new SelectList(db.Activities, "Id", "Title");
             ViewBag.PositionId = new SelectList(db.Positions, "Id", "Title");
+            ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
+            ViewBag.DiscilineList = db.Disciplines.ToList();
             return View();
         }
 
@@ -51,11 +53,12 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] ChairConsist chairConsist)
+        public ActionResult Create([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] ChairConsist chairConsist, ICollection<int> sel)
         {
             if (ModelState.IsValid)
             {
                 db.ChairConsists.Add(chairConsist);
+                chairConsist.Disciplines = db.Disciplines.Where(x => sel.Contains(x.Id)).ToArray();
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,6 +67,8 @@ namespace POVTAS_OSU.Controllers
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title", chairConsist.AcademicTitleId);
             ViewBag.ActivityId = new SelectList(db.Activities, "Id", "Title", chairConsist.ActivityId);
             ViewBag.PositionId = new SelectList(db.Positions, "Id", "Title", chairConsist.PositionId);
+            ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
+            ViewBag.DiscilineList = db.Disciplines.ToList();
             return View(chairConsist);
         }
 
