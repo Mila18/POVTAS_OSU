@@ -82,6 +82,19 @@
             @Html.DisplayFor(model => model.ChairId)
         </dd>
 
+        <dt>
+            <div class="control-label ">Дисциплины:</div>
+        </dt>
+
+        <dd>
+            <ul>
+                @foreach (var item in Model.Disciplines)
+                {
+                    <li>@item.Title</li>
+                }
+            </ul>
+        </dd>
+
     </dl>
 </div>
 <p>

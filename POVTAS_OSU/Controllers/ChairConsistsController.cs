@@ -28,7 +28,12 @@ namespace POVTAS_OSU.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChairConsist chairConsist = db.ChairConsists.Find(id);
+            ChairConsist chairConsist = db.ChairConsists.Include(c => c.AcademicDegree)
+                                                        .Include(c => c.AcademicTitle)
+                                                        .Include(c => c.Activity)
+                                                        .Include(c => c.Position)
+                                                        .Include(c => c.Disciplines)
+                                                        .Single(x => x.Id == id);
             if (chairConsist == null)
             {
                 return HttpNotFound();
