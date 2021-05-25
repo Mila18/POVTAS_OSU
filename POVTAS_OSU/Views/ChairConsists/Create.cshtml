@@ -91,6 +91,7 @@
             <input type="button" id="add_new_сhapter" onclick="press()" value="Добавить дисциплину" />
         </div>
     </div>
+    </div>
 
 
     <div class="form-group">
@@ -98,7 +99,6 @@
             <input type="submit" value="Создать" class="btn btn-default" />
         </div>
     </div>
-</div>
 }
 
 <div>
@@ -108,10 +108,17 @@
 
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script>
+    var i = 0;
     function press() {
+        i++;
         let div = document.createElement('div');
-        var html2Add = '<div class="col-md-2"></div><div class="col-md-10 "><select class="form-control" name="sel"><option value = "0" > --не-выбрано--</option>@foreach (var item in disciplines){<option value="@item.Id">@item.Title</option>}</select> </div>';
+        var html2Add = '<div class="form-group"><div class="col-md-2"><input type="button" id="delete_new_сhapter" onclick="this.parentNode.parentNode.remove()" value="Удалить дисциплину" /></div><div class="col-md-10"><select class="form-control" name="sel"><option value = "0" > --не-выбрано--</option>@foreach (var item in disciplines){<option value="@item.Id">@item.Title</option>}</select> </div>';
         div.innerHTML = html2Add;
         chapters.append(div);
+    };
+    function press_dell() {
+        let myblock = document.querySelectorAll('.sell' + i);
+        myblock.remove();
+        i--;
     };
 </script>

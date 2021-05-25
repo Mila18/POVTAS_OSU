@@ -84,7 +84,12 @@ namespace POVTAS_OSU.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ChairConsist chairConsist = db.ChairConsists.Find(id);
+            ChairConsist chairConsist = db.ChairConsists.Include(c => c.AcademicDegree)
+                                                        .Include(c => c.AcademicTitle)
+                                                        .Include(c => c.Activity)
+                                                        .Include(c => c.Position)
+                                                        .Include(c => c.Disciplines)
+                                                        .Single(x => x.Id == id);
             if (chairConsist == null)
             {
                 return HttpNotFound();
@@ -93,6 +98,8 @@ namespace POVTAS_OSU.Controllers
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title", chairConsist.AcademicTitleId);
             ViewBag.ActivityId = new SelectList(db.Activities, "Id", "Title", chairConsist.ActivityId);
             ViewBag.PositionId = new SelectList(db.Positions, "Id", "Title", chairConsist.PositionId);
+            ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
+            ViewBag.DiscilineList = db.Disciplines.ToList();
             return View(chairConsist);
         }
 
@@ -101,11 +108,14 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] ChairConsist chairConsist)
+        public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] ChairConsist chairConsist, ICollection<int> sel)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(chairConsist).State = EntityState.Modified;
+                db.SaveChanges();
+                var cc = db.ChairConsists.Include(c => c.Disciplines).Single(x => x.Id == chairConsist.Id);
+                cc.Disciplines = db.Disciplines.Where(x => sel.Contains(x.Id)).ToList();
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -113,6 +123,8 @@ namespace POVTAS_OSU.Controllers
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title", chairConsist.AcademicTitleId);
             ViewBag.ActivityId = new SelectList(db.Activities, "Id", "Title", chairConsist.ActivityId);
             ViewBag.PositionId = new SelectList(db.Positions, "Id", "Title", chairConsist.PositionId);
+            ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
+            ViewBag.DiscilineList = db.Disciplines.ToList();
             return View(chairConsist);
         }
 

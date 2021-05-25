@@ -2,6 +2,11 @@
 
 @{
     ViewBag.Title = "Edit";
+    List<POVTAS_OSU.Models.Discipline> disciplines = ViewBag.DiscilineList;
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }
 
 <h2>Edit</h2>
@@ -9,7 +14,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>ChairConsist</h4>
         <hr />
@@ -88,14 +93,52 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <div id="chapters" class="form-group">
+            @foreach (var item in Model.Disciplines)
+            {
+                <div class="form-group">
+                    <div class="col-md-2">
+                        <input type="button" id="delete_new_сhapter" onclick="this.parentNode.parentNode.remove()" value="Удалить дисциплину" />
+                    </div>
+                    <div class="col-md-10">
+                        <select class="form-control" name="sel">
+                            <option value="@item.Id">@item.Title</option>
+                            @foreach (var item2 in disciplines)
+                            {
+                                if (item2.Id != item.Id)
+                                {
+                                    <option value="@item2.Id">@item2.Title</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+            }
         </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" id="add_new_сhapter" onclick="press()" value="Добавить дисциплину" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
     </div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    function press() {
+        let div = document.createElement('div');
+        var html2Add = '<div class="form-group"><div class="col-md-2"><input type="button" id="delete_new_сhapter" onclick="this.parentNode.parentNode.remove()" value="Удалить дисциплину" /></div><div class="col-md-10"><select class="form-control" name="sel"><option value = "0" > --не-выбрано--</option>@foreach (var item in disciplines){<option value="@item.Id">@item.Title</option>}</select> </div>';
+        div.innerHTML = html2Add;
+        chapters.append(div);
+    };
+</script>
