@@ -21,6 +21,8 @@ namespace POVTAS_OSU.Models
 
         [Display(Name = "Стаж работы")]
         public string WorkExperience { get; set; }
+        [Display(Name = "Фото")]
+        public string Photo { get; set; }
 
         [NotMapped]
         public string FullName { get { return Surname + " " + Name + " " + PatronymicName; } }

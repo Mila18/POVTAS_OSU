@@ -58,12 +58,18 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] ChairConsist chairConsist, ICollection<int> sel)
+        public ActionResult Create([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")]HttpPostedFileBase Photo, ChairConsist chairConsist, ICollection<int> sel)
         {
             if (ModelState.IsValid)
             {
+                if (Photo != null)
+                {
+                    string filename = Photo.FileName;
+                    Photo.SaveAs(Server.MapPath("/Images/" + filename));
+                    chairConsist.Photo = "/Images/" + filename;
+                }
                 db.ChairConsists.Add(chairConsist);
-                chairConsist.Disciplines = db.Disciplines.Where(x => sel.Contains(x.Id)).ToArray();
+                if (sel!=null) chairConsist.Disciplines = db.Disciplines.Where(x => sel.Contains(x.Id)).ToArray();
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -108,10 +114,18 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] ChairConsist chairConsist, ICollection<int> sel)
+        public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] HttpPostedFileBase Photo, ChairConsist chairConsist, string oldPhoto, ICollection<int> sel)
         {
             if (ModelState.IsValid)
             {
+                if (Photo != null)
+                {
+                    string filename = Photo.FileName;
+                    Photo.SaveAs(Server.MapPath("/Images/" + filename));
+                    chairConsist.Photo = "/Images/" + filename;
+                }
+                else chairConsist.Photo = oldPhoto;
+
                 db.Entry(chairConsist).State = EntityState.Modified;
                 db.SaveChanges();
                 var cc = db.ChairConsists.Include(c => c.Disciplines).Single(x => x.Id == chairConsist.Id);

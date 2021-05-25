@@ -48,7 +48,7 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Description,MaterialSupportId")] Classroom classroom)
+        public ActionResult Create([Bind(Include = "Id,Description,Number,MaterialSupportId")] Classroom classroom)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Description,MaterialSupportId")] Classroom classroom)
+        public ActionResult Edit([Bind(Include = "Id,Description,Number,MaterialSupportId")] Classroom classroom)
         {
             if (ModelState.IsValid)
             {

@@ -46,10 +46,23 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,Photo,ChairID")] Post post)
+        public ActionResult Create([Bind(Include = "Id,Title,Description,ChairID")] HttpPostedFileBase Photo, HttpPostedFileBase File, Post post)
         {
             if (ModelState.IsValid)
             {
+                if (Photo != null)
+                {
+                    string filename = Photo.FileName;
+                    Photo.SaveAs(Server.MapPath("/Images/" + filename));
+                    post.Photo = "/Images/" + filename;
+                }
+
+                if (File != null)
+                {
+                    string filename = File.FileName;
+                    File.SaveAs(Server.MapPath("/Files/" + filename));
+                    post.File = "/Files/" + filename;
+                }
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,10 +91,26 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,Photo,ChairID")] Post post)
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,ChairID")] HttpPostedFileBase Photo, HttpPostedFileBase File, Post post, string oldPhoto, string oldFile)
         {
             if (ModelState.IsValid)
             {
+                if (Photo != null)
+                {
+                    string filename = Photo.FileName;
+                    Photo.SaveAs(Server.MapPath("/Images/" + filename));
+                    post.Photo = "/Images/" + filename;
+                }
+                else post.Photo = oldPhoto;
+
+                if (File != null)
+                {
+                    string filename = File.FileName;
+                    File.SaveAs(Server.MapPath("/Files/" + filename));
+                    post.File = "/Files/" + filename;
+                }
+                else post.File = oldFile;
+
                 db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

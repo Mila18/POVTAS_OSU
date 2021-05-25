@@ -17,7 +17,7 @@ namespace POVTAS_OSU.Controllers
         // GET: Disciplines
         public ActionResult Index()
         {
-            var disciplines = db.Disciplines.Include(d => d.EducationField);
+            var disciplines = db.Disciplines.Include(d => d.EducationField).OrderBy(x => x.Title);
             return View(disciplines.ToList());
         }
 

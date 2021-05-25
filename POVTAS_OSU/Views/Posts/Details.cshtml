@@ -4,10 +4,10 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Новости</h2>
 
 <div>
-    <h4>Post</h4>
+    <h4>Подробная информация</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -15,7 +15,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Title)
+            <b>@Html.DisplayFor(model => model.Title)</b>
         </dd>
 
         <dt>
@@ -31,20 +31,27 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Photo)
+            <img src="@Html.DisplayFor(model => model.Photo)" width="100px" height="110px"/>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.File)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.File)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.ChairID)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.ChairID)
-        </dd>
+        </dd>*@
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Назад", "Index")
 </p>

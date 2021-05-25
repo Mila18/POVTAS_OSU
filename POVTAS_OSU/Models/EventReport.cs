@@ -11,7 +11,7 @@ namespace POVTAS_OSU.Models
     {
         public int Id { get; set; }
         [Display(Name = "Отчет")]
-        public string Report { get; set; }
+        public string ReportFile { get; set; }
         [Display(Name = "Дата")]
         public string Date { get; set; }
         public virtual CalendarOfEvent CalendarOfEvent { get; set; }

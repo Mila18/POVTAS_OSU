@@ -17,7 +17,9 @@ namespace POVTAS_OSU.Models
         [Display(Name = "Дата документа")]
         public string DocumentDate { get; set; }
         [Display(Name = "Номер документа")]
-        public int DocumentNumber { get; set; }
+        public string DocumentNumber { get; set; }
+        [Display(Name = "Файл")]
+        public string File { get; set; }
 
 
         public int ChairId { get; set; }

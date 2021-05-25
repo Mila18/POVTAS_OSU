@@ -28,7 +28,7 @@ namespace POVTAS_OSU.Controllers
             return View(db.Contacts);
         }
 
-        public ActionResult Post()
+        public ActionResult Posts()
         {
             ViewBag.Message = "Your contact page.";
             return View(db.Posts);

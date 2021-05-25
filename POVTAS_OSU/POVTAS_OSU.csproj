@@ -201,6 +201,22 @@
     <Compile Include="Migrations\202105241226544_MtoM.Designer.cs">
       <DependentUpon>202105241226544_MtoM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105241517345_New_prop.cs" />
+    <Compile Include="Migrations\202105241517345_New_prop.Designer.cs">
+      <DependentUpon>202105241517345_New_prop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105241530091_New_prop1.cs" />
+    <Compile Include="Migrations\202105241530091_New_prop1.Designer.cs">
+      <DependentUpon>202105241530091_New_prop1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105241642076_New_prop2.cs" />
+    <Compile Include="Migrations\202105241642076_New_prop2.Designer.cs">
+      <DependentUpon>202105241642076_New_prop2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105251220591_New prop-s File and Date.cs" />
+    <Compile Include="Migrations\202105251220591_New prop-s File and Date.Designer.cs">
+      <DependentUpon>202105251220591_New prop-s File and Date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicDegree.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
@@ -305,31 +321,16 @@
     <Content Include="Views\Chairs\Details.cshtml" />
     <Content Include="Views\Chairs\Edit.cshtml" />
     <Content Include="Views\Chairs\Index.cshtml" />
-    <Content Include="Views\Classrooms\Create.cshtml" />
-    <Content Include="Views\Classrooms\Delete.cshtml" />
-    <Content Include="Views\Classrooms\Details.cshtml" />
-    <Content Include="Views\Classrooms\Edit.cshtml" />
-    <Content Include="Views\Classrooms\Index.cshtml" />
     <Content Include="Views\Contacts\Create.cshtml" />
     <Content Include="Views\Contacts\Delete.cshtml" />
     <Content Include="Views\Contacts\Details.cshtml" />
     <Content Include="Views\Contacts\Edit.cshtml" />
     <Content Include="Views\Contacts\Index.cshtml" />
-    <Content Include="Views\Documents\Create.cshtml" />
-    <Content Include="Views\Documents\Delete.cshtml" />
-    <Content Include="Views\Documents\Details.cshtml" />
-    <Content Include="Views\Documents\Edit.cshtml" />
-    <Content Include="Views\Documents\Index.cshtml" />
     <Content Include="Views\EducationFields\Create.cshtml" />
     <Content Include="Views\EducationFields\Delete.cshtml" />
     <Content Include="Views\EducationFields\Details.cshtml" />
     <Content Include="Views\EducationFields\Edit.cshtml" />
     <Content Include="Views\EducationFields\Index.cshtml" />
-    <Content Include="Views\EventReports\Create.cshtml" />
-    <Content Include="Views\EventReports\Delete.cshtml" />
-    <Content Include="Views\EventReports\Details.cshtml" />
-    <Content Include="Views\EventReports\Edit.cshtml" />
-    <Content Include="Views\EventReports\Index.cshtml" />
     <Content Include="Views\MaterialSupports\Create.cshtml" />
     <Content Include="Views\MaterialSupports\Delete.cshtml" />
     <Content Include="Views\MaterialSupports\Details.cshtml" />
@@ -360,9 +361,26 @@
     <Content Include="Views\Disciplines\Details.cshtml" />
     <Content Include="Views\Disciplines\Edit.cshtml" />
     <Content Include="Views\Disciplines\Index.cshtml" />
+    <Content Include="Views\Classrooms\Create.cshtml" />
+    <Content Include="Views\Classrooms\Delete.cshtml" />
+    <Content Include="Views\Classrooms\Details.cshtml" />
+    <Content Include="Views\Classrooms\Edit.cshtml" />
+    <Content Include="Views\Classrooms\Index.cshtml" />
+    <Content Include="Views\Documents\Create.cshtml" />
+    <Content Include="Views\Documents\Delete.cshtml" />
+    <Content Include="Views\Documents\Details.cshtml" />
+    <Content Include="Views\Documents\Edit.cshtml" />
+    <Content Include="Views\Documents\Index.cshtml" />
+    <Content Include="Views\EventReports\Create.cshtml" />
+    <Content Include="Views\EventReports\Delete.cshtml" />
+    <Content Include="Views\EventReports\Details.cshtml" />
+    <Content Include="Views\EventReports\Edit.cshtml" />
+    <Content Include="Views\EventReports\Index.cshtml" />
+    <Content Include="Views\Home\Posts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
@@ -387,6 +405,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105241226544_MtoM.resx">
       <DependentUpon>202105241226544_MtoM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105241517345_New_prop.resx">
+      <DependentUpon>202105241517345_New_prop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105241530091_New_prop1.resx">
+      <DependentUpon>202105241530091_New_prop1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105241642076_New_prop2.resx">
+      <DependentUpon>202105241642076_New_prop2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105251220591_New prop-s File and Date.resx">
+      <DependentUpon>202105251220591_New prop-s File and Date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

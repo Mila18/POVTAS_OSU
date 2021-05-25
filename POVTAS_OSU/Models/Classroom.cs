@@ -16,6 +16,8 @@ namespace POVTAS_OSU.Models
         public int Id { get; set; }
         [Display(Name = "Описание")]
         public string Description { get; set; }
+        [Display(Name = "Номер аудитории")]
+        public string Number { get; set; }
 
         public ICollection<TechnicalFacility> TechnicalFacilities;
 

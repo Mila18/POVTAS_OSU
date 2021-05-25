@@ -40,12 +40,12 @@
         @Html.DisplayFor(modelItem => item.Date)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.EventReportOf.Report)
+        @Html.DisplayFor(modelItem => item.EventReportOf.ReportFile)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.EventReportId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.EventReportId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.EventReportId })
+        @Html.ActionLink("Редактирование", "Edit", new { id = item.EventReportId }) |
+        @Html.ActionLink("Подробнее", "Details", new { id = item.EventReportId }) |
+        @Html.ActionLink("Удалить", "Delete", new { id = item.EventReportId })
     </td>
 </tr>
 }

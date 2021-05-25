@@ -39,7 +39,7 @@ namespace POVTAS_OSU.Controllers
         // GET: TechnicalFacilities/Create
         public ActionResult Create()
         {
-            ViewBag.ClassroomId = new SelectList(db.Classrooms, "Id", "Description");
+            ViewBag.ClassroomId = new SelectList(db.Classrooms, "Id", "Number");
             return View();
         }
 

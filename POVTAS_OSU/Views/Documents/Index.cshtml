@@ -23,6 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.DocumentNumber)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.File)
+        </th>
         @*<th>
             @Html.DisplayNameFor(model => model.ChairId)
         </th>*@
@@ -43,13 +46,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.DocumentNumber)
         </td>
+        <td>
+            <a href="@item.File">Скачать</a>
+        </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.ChairId)
         </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Подробнее", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

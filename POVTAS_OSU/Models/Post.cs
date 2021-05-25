@@ -14,8 +14,13 @@ namespace POVTAS_OSU.Models
         public string Title { get; set; }
         [Display(Name = "Описание")]
         public string Description { get; set; }
+        [Display(Name = "Дата публикации")]
+        public string Date { get; set; }
         [Display(Name = "Фото")]
         public string Photo { get; set; }
+        [Display(Name = "Файл")]
+        public string File { get; set; }
+
 
 
         public int ChairID { get; set; }
