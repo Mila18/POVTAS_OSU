@@ -115,7 +115,10 @@ namespace POVTAS_OSU.Controllers
                 db.Entry(chairConsist).State = EntityState.Modified;
                 db.SaveChanges();
                 var cc = db.ChairConsists.Include(c => c.Disciplines).Single(x => x.Id == chairConsist.Id);
-                cc.Disciplines = db.Disciplines.Where(x => sel.Contains(x.Id)).ToList();
+                if (sel != null)
+                    cc.Disciplines = db.Disciplines.Where(x => sel.Contains(x.Id)).ToList();
+                else
+                    cc.Disciplines = new List<Discipline>();
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
