@@ -10,6 +10,7 @@ using POVTAS_OSU.Models;
 
 namespace POVTAS_OSU.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class AcademicDegreesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

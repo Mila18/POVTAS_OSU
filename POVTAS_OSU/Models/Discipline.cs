@@ -19,10 +19,6 @@ namespace POVTAS_OSU.Models
         public EducationField EducationField { get; set; }
 
 
-        //public int ChairConsistId { get; set; }
-        //public ChairConsist ChairConsist { get; set; }
-
-
         public Discipline()
         {
             ChairConsists = new List<ChairConsist>();

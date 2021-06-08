@@ -36,27 +36,30 @@
                                 <li>@Html.ActionLink("Школьникам", "", "Home")</li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">АдминПанель<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Состав кафедры", "Index", "ChairConsists")</li>
-                                <li>@Html.ActionLink("Новости", "Index", "Posts")</li>
-                                <li>@Html.ActionLink("Календарь мероприятий", "Index", "CalendarOfEvents")</li>
-                                <li>@Html.ActionLink("Контакты", "Index", "Contacts")</li>
-                                <li>@Html.ActionLink("Дисциплины", "Index", "Disciplines")</li>
-                                <li>@Html.ActionLink("Направления подготовки", "Index", "EducationFields")</li>
-                                <li>@Html.ActionLink("Отчеты о мероприятиях", "Index", "EventReports")</li>
-                                <li>@Html.ActionLink("МТО", "Index", "MaterialSupports")</li>
-                                <li>@Html.ActionLink("Аудитории", "Index", "Classrooms")</li>
-                                <li>@Html.ActionLink("Должности", "Index", "Positions")</li>
-                                <li>@Html.ActionLink("Документы", "Index", "Documents")</li>
-                                <li>@Html.ActionLink("Техническое оснащение", "Index", "TechnicalFacilities")</li>
-                                <li>@Html.ActionLink("Виды деятельности", "Index", "Activities")</li>
-                                <li>@Html.ActionLink("Ученое звание", "Index", "AcademicTitles")</li>
-                                <li>@Html.ActionLink("Ученая степень", "Index", "AcademicDegrees")</li>
-                            </ul>
-                        </li>
-                    </ul>
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">АдминПанель<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Состав кафедры", "Index", "ChairConsists")</li>
+                                    <li>@Html.ActionLink("Новости", "Index", "Posts")</li>
+                                    <li>@Html.ActionLink("Календарь мероприятий", "Index", "CalendarOfEvents")</li>
+                                    <li>@Html.ActionLink("Контакты", "Index", "Contacts")</li>
+                                    <li>@Html.ActionLink("Дисциплины", "Index", "Disciplines")</li>
+                                    <li>@Html.ActionLink("Направления подготовки", "Index", "EducationFields")</li>
+                                    <li>@Html.ActionLink("Отчеты о мероприятиях", "Index", "EventReports")</li>
+                                    <li>@Html.ActionLink("МТО", "Index", "MaterialSupports")</li>
+                                    <li>@Html.ActionLink("Аудитории", "Index", "Classrooms")</li>
+                                    <li>@Html.ActionLink("Должности", "Index", "Positions")</li>
+                                    <li>@Html.ActionLink("Документы", "Index", "Documents")</li>
+                                    <li>@Html.ActionLink("Техническое оснащение", "Index", "TechnicalFacilities")</li>
+                                    <li>@Html.ActionLink("Виды деятельности", "Index", "Activities")</li>
+                                    <li>@Html.ActionLink("Ученое звание", "Index", "AcademicTitles")</li>
+                                    <li>@Html.ActionLink("Ученая степень", "Index", "AcademicDegrees")</li>
+                                </ul>
+                            </li>
+                        }
+                        </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
             </p>

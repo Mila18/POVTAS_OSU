@@ -35,7 +35,10 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Photo)
+                <img src="@item.Photo" width="100px" height="110px" />
+            </td>
+            <td>
+                <a href="@item.File">Скачать</a>
             </td>
             @*<td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

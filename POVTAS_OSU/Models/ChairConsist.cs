@@ -46,21 +46,11 @@ namespace POVTAS_OSU.Models
         public int ChairId { get; set; }
         public Chair Chair { get; set; }
 
-
-       
         public ChairConsist()
         {
             Disciplines = new List<Discipline>();
         }
         public ICollection<Discipline> Disciplines { get; set; }
-
-        //public ChairConsist()
-        //{
-        //    Disciplines = new List<Discipline>();
-        //}
-
-        //public ICollection<Discipline> Disciplines;
-
 
     }
 }
