@@ -1,82 +1,143 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кафедра ПОВТАС</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+
 </head>
-<body>
+<body class="bg-dark text-white text-center">
 
-    <div class="navbar navbar-dark">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!--@Html.ActionLink("Кафедра ПОВТАС", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })-->
-            </div>
-            <p>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Новости", "Posts", "Home")</li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Кафедра ПОВТАС</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+       
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Home/Index">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Home/Posts">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Home/Contact">Контакты</a>
+                    </li>
 
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Меню<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Образовательные программы", "", "Home")</li>
-                                <li>@Html.ActionLink("НИР и мероприятия", "", "Home")</li>
-                                <li>@Html.ActionLink("Студентам, выпусникам", "", "Home")</li>
-                                <li>@Html.ActionLink("Школьникам", "", "Home")</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle " href="~/Views/Home/Contact.cshtml" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item">News</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="~/Views/Home/Contact.cshtml" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Dropdown link
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="../AcademicDegrees/Index">Ученая степень</a></li>
+                                <li><a class="dropdown-item" href="../AcademicTitles/Index">Ученое звание</a></li>
+                                <li><a class="dropdown-item" href="../Activities/Index">Мероприятия</a></li>
+                                <li><a class="dropdown-item" href="../CalendarOfEvents/Index">Календарь мероприятий</a></li>
+                                <li><a class="dropdown-item" href="../ChairConsists/Index">Состав кафедры</a></li>
+                                <li><a class="dropdown-item" href="../Classrooms/Index">Аудитории</a></li>
                             </ul>
                         </li>
-                        @if (User.IsInRole("admin"))
-                        {
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">АдминПанель<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("Состав кафедры", "Index", "ChairConsists")</li>
-                                    <li>@Html.ActionLink("Новости", "Index", "Posts")</li>
-                                    <li>@Html.ActionLink("Календарь мероприятий", "Index", "CalendarOfEvents")</li>
-                                    <li>@Html.ActionLink("Контакты", "Index", "Contacts")</li>
-                                    <li>@Html.ActionLink("Дисциплины", "Index", "Disciplines")</li>
-                                    <li>@Html.ActionLink("Направления подготовки", "Index", "EducationFields")</li>
-                                    <li>@Html.ActionLink("Отчеты о мероприятиях", "Index", "EventReports")</li>
-                                    <li>@Html.ActionLink("МТО", "Index", "MaterialSupports")</li>
-                                    <li>@Html.ActionLink("Аудитории", "Index", "Classrooms")</li>
-                                    <li>@Html.ActionLink("Должности", "Index", "Positions")</li>
-                                    <li>@Html.ActionLink("Документы", "Index", "Documents")</li>
-                                    <li>@Html.ActionLink("Техническое оснащение", "Index", "TechnicalFacilities")</li>
-                                    <li>@Html.ActionLink("Виды деятельности", "Index", "Activities")</li>
-                                    <li>@Html.ActionLink("Ученое звание", "Index", "AcademicTitles")</li>
-                                    <li>@Html.ActionLink("Ученая степень", "Index", "AcademicDegrees")</li>
-                                </ul>
-                            </li>
-                        }
-                    </ul>
+                    }
+
+                </ul>
+
+                <div class="navbar-text navbar-right">
                     @Html.Partial("_LoginPartial")
                 </div>
-            </p>
-
+            </div>
         </div>
-    </div>
+    </nav>
+
+
+    @*<div class="navbar navbar-dark">
+            <div class="container">
+                <div class="navbar-collapse">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Кафедра ПОВТАС", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <p>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Новости", "Posts", "Home")</li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">Меню<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Образовательные программы", "", "Home")</li>
+                                    <li>@Html.ActionLink("НИР и мероприятия", "", "Home")</li>
+                                    <li>@Html.ActionLink("Студентам, выпусникам", "", "Home")</li>
+                                    <li>@Html.ActionLink("Школьникам", "", "Home")</li>
+                                </ul>
+                            </li>
+                            @if (User.IsInRole("admin"))
+                            {
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">АдминПанель<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.ActionLink("Состав кафедры", "Index", "ChairConsists")</li>
+                                        <li>@Html.ActionLink("Новости", "Index", "Posts")</li>
+                                        <li>@Html.ActionLink("Календарь мероприятий", "Index", "CalendarOfEvents")</li>
+                                        <li>@Html.ActionLink("Контакты", "Index", "Contacts")</li>
+                                        <li>@Html.ActionLink("Дисциплины", "Index", "Disciplines")</li>
+                                        <li>@Html.ActionLink("Направления подготовки", "Index", "EducationFields")</li>
+                                        <li>@Html.ActionLink("Отчеты о мероприятиях", "Index", "EventReports")</li>
+                                        <li>@Html.ActionLink("МТО", "Index", "MaterialSupports")</li>
+                                        <li>@Html.ActionLink("Аудитории", "Index", "Classrooms")</li>
+                                        <li>@Html.ActionLink("Должности", "Index", "Positions")</li>
+                                        <li>@Html.ActionLink("Документы", "Index", "Documents")</li>
+                                        <li>@Html.ActionLink("Техническое оснащение", "Index", "TechnicalFacilities")</li>
+                                        <li>@Html.ActionLink("Виды деятельности", "Index", "Activities")</li>
+                                        <li>@Html.ActionLink("Ученое звание", "Index", "AcademicTitles")</li>
+                                        <li>@Html.ActionLink("Ученая степень", "Index", "AcademicDegrees")</li>
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </p>
+
+            </div>
+        </div>*@
     <div class="container-fluid">
         @RenderBody()
+
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
+            <p>y; @DateTime.Now.Year - мое приложение ASP.NET</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
+    @*<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>*@
     @Scripts.Render("~/Scripts/bootstrap.js")
     @RenderSection("scripts", required: false)
 </body>
+
 </html>
