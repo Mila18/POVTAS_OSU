@@ -4,7 +4,7 @@
     ViewBag.Title = "Contact";
 }
 
-<table class="table">
+<table class="table text-white">
     <tr>
         <th>
             Адрес
@@ -30,11 +30,7 @@
             <td>
                 <a href="mailto:@Html.DisplayFor(modelItem => item.Email)">@Html.DisplayFor(modelItem => item.Email)</a>
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
+           
         </tr>
     }
 
