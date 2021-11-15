@@ -37,5 +37,22 @@ namespace POVTAS_OSU.Controllers
             ViewBag.Message = "Your contact page.";
             return View(db.Posts);
         }
+
+        public ActionResult Disciplines(string Id)
+        {
+            
+            var disciplines = db.Disciplines.Include(d => d.EducationField).OrderBy(x => x.Title);
+            ViewBag.EducationFields = db.EducationFields.ToList();
+            if (Id != null)
+            {
+                return View(disciplines.Where(x => x.EducationFieldId.ToString() == Id).ToList());
+            }
+            else
+            {
+                return View(new List<Discipline>());
+            }
+           
+        }
+
     }
 }

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<POVTAS_OSU.Models.Discipline>
+@using POVTAS_OSU.Models
+
+
+@{
+    ViewBag.Title = "Disciplines";
+    List<EducationField> educationFields = ViewBag.EducationFields;
+}
+
+
+<h2>Дисциплины</h2>
+
+
+
+
+
+
+@using (Html.BeginForm("Disciplines", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="container-fluid">
+            <div >
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Id">
+                    <option disabled selected value="0" name="Id">Выберите направление подготовки</option>
+                    @foreach (var item in educationFields)
+                    {
+                        <option name="Id" value="@item.Id"> @Html.DisplayFor(modelItem => item.Title)</option>
+                    }
+                </select>
+                @*<p><input type="submit" value="Выбрать" /></p>*@
+            </div>
+            <div><button type="submit" class="btn btn-lg btn-outline-primary">Выбрать</button></div>
+        </div>
+    </div>
+
+}
+
+<table class="table table-dark">
+
+    <tr class="table-primary">
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EducationField.Title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-start pl-5">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EducationField.Title)
+            </td>
+        </tr>
+    }
+
+</table>
+

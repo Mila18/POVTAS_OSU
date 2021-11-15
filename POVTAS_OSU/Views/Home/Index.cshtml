@@ -2,200 +2,284 @@
 @{
     ViewBag.Title = "Home Page";
 }
+<div>
+    <style>
+        body {
+            min-width: min-content;
+        }
+        /* Hover Blur Effect */
+        .text-white {
+            color: #fff;
+        }
 
-<style>
+        .hover-blur a {
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
 
-    /* Hover Blur Effect */
-    .text-white {
-        color: #fff;
-    }
+        .hover-blur img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            /*-ms-transition: all 0.5s ease-in-out;*/
+            transition: all 0.5s ease-in-out;
+        }
 
-    .hover-blur a {
-        display: block;
-        position: relative;
-        overflow: hidden;
-    }
+        .hover-blur:hover img {
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -o-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
+            -webkit-filter: grayscale(0.6) blur(1px);
+            filter: grayscale(0.6) blur(1px);
+        }
 
-    .hover-blur img {
-        width: 100%;
-        height: auto;
-        max-height: 350px;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        /*-ms-transition: all 0.5s ease-in-out;*/
-        transition: all 0.5s ease-in-out;
-    }
-
-    .hover-blur:hover img {
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -o-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        transform: scale(1.2);
-        -webkit-filter: grayscale(0.6) blur(1px);
-        filter: grayscale(0.6) blur(1px);
-    }
-
-    .hover-blur a h1 {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin-top: -500px;
-        margin-bottom: 0px;
-        height: 100%;
-        width: 100%;
-        padding: 45% 20px;
-        text-align: center;
-        background-color: rgba(0,0,0,0.5);
-        /*background dotted*/
-        background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
-        background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
-        background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
-        background-image: repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
-        /*-webkit-background-size: 3px 3px;
+        .hover-blur a h1 {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 3vw;
+            margin-bottom: 0px;
+            height: 100%;
+            width: 100%;
+            padding: 11vw;
+            text-align: center;
+            background-color: rgba(0,0,0,0.5);
+            /*background dotted*/
+            background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
+            background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
+            background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
+            background-image: repeating-radial-gradient(center center, rgba(0,0,0,.8), rgba(0,0,0,.8) 1px, transparent 1px, transparent 100%);
+            /*-webkit-background-size: 3px 3px;
         -moz-background-size: 3px 3px;*/
-        background-size: 3px 3px;
-        -webkit-transition: all 0.5s linear;
-        -moz-transition: all 0.5s linear;
-        -o-transition: all 0.5s linear;
-        /*-ms-transition: all 0.5s linear;*/
-        transition: all 0.5s linear;
-        /* -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            background-size: 3px 3px;
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            /*-ms-transition: all 0.5s linear;*/
+            transition: all 0.5s linear;
+            /* -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
         filter: alpha(opacity=0);*/
-        opacity: 0;
-    }
+            opacity: 0;
+        }
 
-    .hover-blur:hover a h1 {
-        /*-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        .hover-blur:hover a h1 {
+            /*-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
         filter: alpha(opacity=100);*/
-        opacity: 1;
-    }
+            opacity: 1;
+        }
 
-    .hover-blur .text-white {
-        -webkit-transform: scale(0);
-        -moz-transform: scale(0);
-        -o-transform: scale(0);
-        -ms-transform: scale(0);
-        transform: scale(0);
-        -webkit-transition: all 0.5s linear;
-        -moz-transition: all 0.5s linear;
-        -o-transition: all 0.5s linear;
-        /*-ms-transition: all 0.5s linear;*/
-        transition: all 0.5s linear;
-        /*-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        .hover-blur .text-white {
+            -webkit-transform: scale(0);
+            -moz-transform: scale(0);
+            -o-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            /*-ms-transition: all 0.5s linear;*/
+            transition: all 0.5s linear;
+            /*-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
         filter: alpha(opacity=0);*/
-        opacity: 0;
-    }
+            opacity: 0;
+        }
 
-    .hover-blur:hover .text-white {
-        -webkit-transform: scale(1);
-        -moz-transform: scale(1);
-        -o-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-        -webkit-transition: all 0.5s linear;
-        -moz-transition: all 0.5s linear;
-        -o-transition: all 0.5s linear;
-        /*-ms-transition: all 0.5s linear;*/
-        transition: all 0.5s linear;
-        /*-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=1)";
+        .hover-blur:hover .text-white {
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -o-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            /*-ms-transition: all 0.5s linear;*/
+            transition: all 0.5s linear;
+            /*-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=1)";
         filter: alpha(opacity=1);*/
-        opacity: 1;
-    }
-</style>
+            opacity: 1;
+        }
 
-<div class="hover-blur">
-    <a href="#" title="">
-        <img src="../../Images/Main.jpg" alt="" />
+        .bg-img {
+            background: -webkit-linear-gradient(270deg, rgb(250, 250, 250) 4%, rgb(139, 199, 255), rgb(0, 131, 255));
+            background: -moz-linear-gradient(270deg, rgb(250, 250, 250) 4%, rgb(139, 199, 255), rgb(0, 131, 255));
+            background: linear-gradient(270deg, rgb(250, 250, 250) 4%, rgb(139, 199, 255), rgb(0, 131, 255));
+        }
 
-        <div class="TextContainer">
-            <h1>
-                <span class="text-white ">История кафедры </span><br />
-                <p class="h5 text-light ">программного обеспечения вычислительной техники и автоматизированных систем</p>
-            </h1>
+        #myBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: transparent;  /*Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            font-size: 30px; /* Increase font size */
+        }
 
+            #myBtn:hover {
+                /*background-color: #555;*/ /* Add a dark-grey background on hover */
+                color: dodgerblue;
+            }
+    </style>
+
+    @*<div class="row my-5" >
+        <div class="col-md-7">
+            <img src="../../Images/OSU1.png" alt="Image">
         </div>
-    </a>
-</div>
+        <div class="col-md-5 text-start">
+            <h1>
+                Кафедра
+            </h1>
+            <h2>программного обеспечения вычислительной техники и автоматизированных систем</h2>
+        </div>
+    </div>*@
 
-<div class="row align-items-center">
-    <div class="col-md-6">
-        <img src="../../Images/OSU1.png" alt="Image">
-    </div>
-    <div class="col-md-6 text-start">
+    <div class="hover-blur">
+        <a href="#" title="">
+            <img src="../../Images/Main.jpg" alt="" />
 
-        <h5>
-            Кафедра программного обеспечения вычислительной техники и автоматизированных систем
-            является структурным подразделением факультета математики и информационных технологий
-            университета и располагается в аудитории 1222 1-го учебного корпуса ОГУ.
-        </h5>
-        <h5>
-            С момента возникновения кафедру отличал высокий научно-методический уровень преподавания
-            читаемых дисциплин. В настоящее время традиции кафедры продолжают бывшие выпускники нашего
-            вуза, которые начали свою научно-педагогическую карьеру в стенах родной кафедры, будучи еще
-            студентами. Первый выпуск инженеров по специальности "Программное обеспечение вычислительной
-            техники и автоматизированных систем" состоялся в 1998 году.
-        </h5>
-    </div>
-</div>
+            <div class="TextContainer">
+                <h1>
+                    <span class="text-white">Кафедра </span><br />
+                    <p class="text-light" style="font-size:2vw">программного обеспечения вычислительной техники и автоматизированных систем</p>
+                </h1>
 
-
-
-
-<div class="row align-items-center mt-5 p-3 mb-2 bg-light bg-gradient text-dark">
-    <div class="col-md-12 h5">
-        Кафедра осуществляет подготовку дипломированных специалистов по направлениям:
-        <ul>
-            <li>230100 -"Информатика и вычислительная техника": <br /> специальность 230105.65 – "Программное обеспечение вычислительной техники и автоматизированных систем", бакалавриатура по профилю "Программное обеспечение средств вычислительной техники и автоматизированных систем, <br /> магистратура по профилю "Информационное и программное обеспечение автоматизированных систем""</li>
-            <li>231000 -"Программная инженерия": бакалавриатура по профилю "Разработка программно-информационных систем", магистратура по профилю "Разработка информационно-телекоммуникационных систем"</li>
-        </ul>
-
-        На сегодняшний день на кафедре работают 20 сотрудников, из них 15 преподавателей, в том числе 2 доктора (Н. А. Соловьев, Т. М. Зубкова), 11 кандидатов наук (В. В. Паничев, Е. Н. Наточая, Т. В. Волкова, Л. А. Юркевская, Л. Ф. Тагирова, В. Н. Костин, И. А. Щудро, Н. А. Тишина, М. Н. Мошуров, А. М.  Семенов, С. А. Щелоков) и 1 программист (Я. М. Коновал) .
-
+            </div>
+        </a>
     </div>
 
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <img src="../../Images/OSU1.png" alt="Image">
+        </div>
+        <div class="col-md-6 text-start">
+            <h5>
+                Кафедра программного обеспечения вычислительной техники и автоматизированных систем
+                является структурным подразделением факультета математики и информационных технологий
+                университета и располагается в аудитории 1222 1-го учебного корпуса ОГУ.
+            </h5>
+            <h5>
+                С момента возникновения кафедру отличал высокий научно-методический уровень преподавания
+                читаемых дисциплин. В настоящее время традиции кафедры продолжают бывшие выпускники нашего
+                вуза, которые начали свою научно-педагогическую карьеру в стенах родной кафедры, будучи еще
+                студентами. Первый выпуск инженеров по специальности "Программное обеспечение вычислительной
+                техники и автоматизированных систем" состоялся в 1998 году.
+            </h5>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light text-dark">
+        <div class="row mt-5 ">
+            <div class="col-6 mt-5">
+                <h4 class="text-dark text-end mx-3">На сегодняшний день кафедра осуществляет подготовку дипломированных специалистов по следующим направлениям: </h4>
+            </div>
+            <div class="col-6 mt-5">
+
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+
+                    <div class="accordion-item ">
+                        <h2 class="accordion-header " id="headingOne">
+                            <button class="accordion-button collapsed bg-primary text-white fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                231000 -"Программная инженерия"
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-dark">
+                                <ul class="fs-5">
+                                    <li>бакалавриатура по профилю "Разработка программно-информационных систем"</li>
+                                    <li>магистратура по профилю "Разработка информационно-телекоммуникационных систем"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed bg-primary text-white fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                230100 -"Информатика и вычислительная техника"
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-dark">
+                                <ul class="fs-5">
+                                    <li>бакалавриатура по профилю "Программное обеспечение средств вычислительной техники и автоматизированных систем"</li>
+                                    <li>магистратура по профилю "Информационное и программное обеспечение автоматизированных систем"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button type="button" class="btn btn-lg btn-primary my-5">Подробнее</button>
+    </div>
 
 
+    <div id="contacts" class="mt-5">
+        <div class="row mb-4">
+            <div class="col-4">
+                <i class="bi bi-geo-alt-fill" style="font-size: 2rem; color: white;"></i>
+                Адрес
+            </div>
+            <div class="col-4">
+                <i class="bi bi-telephone-inbound-fill" style="font-size: 2rem; color: white;"></i>
+                Телефон
+            </div>
+            <div class="col-4">
+                <i class="bi bi-envelope-fill" style="font-size: 2rem; color: white;"></i>
+                E-mail
+            </div>
+        </div>
+        <div class="row mb-5">
+            @foreach (var item in Model)
+            {
+                <div class="col-4">
+                    @Html.DisplayFor(modelItem => item.Address)
+                </div>
+                <div class="col-4">
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </div>
+                <div class="col-4">
+                    <a href="mailto:@Html.DisplayFor(modelItem => item.Email)">@Html.DisplayFor(modelItem => item.Email)</a>
+                </div>
+            }
+        </div>
+    </div>
+    <script>
+        window.onscroll = function () { scrollFunction() };
 
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-10.646.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z" />
+</svg></button>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.5525780268317!2d55.105821815698405!3d51.777786179680504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x417bf0da65737a05%3A0x5cfe0bb1b0344a3!2z0J7RgNC10L3QsdGD0YDQs9GB0LrQuNC5INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90YvQuSDRg9C90LjQstC10YDRgdC40YLQtdGC!5e0!3m2!1sru!2sru!4v1621844986789!5m2!1sru!2sru" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
-
-
-
-<table class="table text-white" id="contacts">
-    <tr>
-        <th>
-            Адрес
-        </th>
-        <th>
-            Телефон
-        </th>
-        <th>
-            E-mail
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                <a href="mailto:@Html.DisplayFor(modelItem => item.Email)">@Html.DisplayFor(modelItem => item.Email)</a>
-            </td>
-
-        </tr>
-    }
-
-</table>
-<center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2468.5525780268317!2d55.105821815698405!3d51.777786179680504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x417bf0da65737a05%3A0x5cfe0bb1b0344a3!2z0J7RgNC10L3QsdGD0YDQs9GB0LrQuNC5INCz0L7RgdGD0LTQsNGA0YHRgtCy0LXQvdC90YvQuSDRg9C90LjQstC10YDRgdC40YLQtdGC!5e0!3m2!1sru!2sru!4v1621844986789!5m2!1sru!2sru" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></center>
-
 
 
 
