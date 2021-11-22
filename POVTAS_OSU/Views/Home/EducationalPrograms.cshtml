@@ -1,0 +1,213 @@
+﻿
+@{
+    ViewBag.Title = "EducationalPrograms";
+}
+
+<h2>Образовательные программы</h2>
+
+
+<div class="form-group">
+    <div class="container-fluid">
+        <div>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="ddlEducationFields">
+                <option disabled selected value="0" name="Id">Выберите направление подготовки</option>
+
+                <option value="09-03-01">Информатика и вычислительная техника (бакалавриат)</option>
+                <option value="09-03-04">Программная инженерия (бакалавриат)</option>
+                <option value="09-03-01M">Информатика и вычислительная техника (магистратура)</option>
+                <option value="09-03-04M">Программная инженерия (магистратура)</option>
+
+            </select>
+            
+            <div><button type="submit" class="btn btn-lg btn-outline-light" onclick="GetSelectedTextValue(ddlEducationFields)">Выбрать</button></div>
+        </div>
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+    function GetSelectedTextValue(ddlEducationFields) {
+        var selectedText = ddlEducationFields.options[ddlEducationFields.selectedIndex].innerHTML;
+        var selectedValue = ddlEducationFields.value;
+        if (selectedValue == "09-03-01") {
+            document.getElementById("09-03-01").style.display = "block";
+            document.getElementById("09-03-04").style.display = "none";
+            document.getElementById("09-03-01M").style.display = "none";
+            document.getElementById("09-03-04M").style.display = "none";
+        }
+        else if (selectedValue == "09-03-04") {
+            document.getElementById("09-03-04").style.display = "block";
+            document.getElementById("09-03-01").style.display = "none";
+            document.getElementById("09-03-01M").style.display = "none";
+            document.getElementById("09-03-04M").style.display = "none";
+        }
+        else if (selectedValue == "09-03-01M") {
+            document.getElementById("09-03-01M").style.display = "block";
+            document.getElementById("09-03-01").style.display = "none";
+            document.getElementById("09-03-04").style.display = "none";
+            document.getElementById("09-03-04M").style.display = "none";
+        }
+        else if (selectedValue == "09-03-04M") {
+            document.getElementById("09-03-04M").style.display = "block";
+            document.getElementById("09-03-01").style.display = "none";
+            document.getElementById("09-03-04").style.display = "none";
+            document.getElementById("09-03-01M").style.display = "none";
+            
+        }
+        /*alert("Selected Text: " + selectedText + " Value: " + selectedValue);*/
+    }
+</script>
+
+<div class="mt-5 " id="09-03-01" style="display:none;">
+
+    <h3>09.03.01 Информатика и вычислительная техника</h3>
+    <h5>Язык, на котором осуществляется обучение: русский</h5>
+    <h5>Срок действия государственной аккредитации до 02.04.2026 г.</h5>
+    <h5>Уровень образования: высшее образование (бакалавриат)</h5>
+
+    <table class="table table-light table-hover text-start">
+
+        <tr class="table-primary">
+            <th scope="col">Образовательная программа</th>
+            <th scope="col">Квалификация</th>
+            <th scope="col">Форма обучения</th>
+            <th scope="col">Срок обучения</th>
+            <th scope="col">Год набора</th>
+        </tr>
+
+        <tr>
+            <th scope="row">Общий профиль</th>
+            <td>Бакалавр</td>
+            <td>Очная</td>
+            <td>4 года</td>
+            <td>2018</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Программное обеспечение средств вычислительной техники и автоматизированных систем</th>
+            <td>Бакалавр</td>
+            <td>Очная</td>
+            <td>4 года</td>
+            <td>2019, 2020, 2021</td>
+        </tr>
+
+
+    </table>
+</div>
+
+
+
+<div class="mt-5 " id="09-03-04" style="display:none;">
+
+    <h3>09.03.04 Программная инженерия</h3>
+    <h5>Язык, на котором осуществляется обучение: русский</h5>
+    <h5>Срок действия государственной аккредитации до 02.04.2026 г.</h5>
+    <h5>Уровень образования: высшее образование (бакалавриат)</h5>
+
+    <table class="table table-light table-hover text-start">
+
+        <tr class="table-primary">
+            <th scope="col">Образовательная программа</th>
+            <th scope="col">Квалификация</th>
+            <th scope="col">Форма обучения</th>
+            <th scope="col">Срок обучения</th>
+            <th scope="col">Год набора</th>
+        </tr>
+
+        <tr>
+            <th scope="row">Разработка программно-информационных систем</th>
+            <td>Бакалавр</td>
+            <td>Очная</td>
+            <td>4 года</td>
+            <td>2018, 2019, 2020, 2021, 2022</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Разработка программно-информационных систем</th>
+            <td>Бакалавр</td>
+            <td>Заочная</td>
+            <td>4,5 года</td>
+            <td>2017, 2018, 2019, 2020, 2021, 2022</td>
+        </tr>
+
+        <tr class="table-primary text-center">
+            <th scope="col" colspan="5">Институт непрерывного профессионального образования ОГУ</th>
+        </tr>
+
+        <tr>
+            <th scope="row">Разработка программно-информационных систем</th>
+            <td>Бакалавр</td>
+            <td>Заочная</td>
+            <td>4,5 года</td>
+            <td>2022</td>
+        </tr>
+
+    </table>
+</div>
+
+<div class="mt-5 " id="09-03-01M" style="display:none;">
+
+    <h3>09.03.01 Информатика и вычислительная техника</h3>
+    <h5>Язык, на котором осуществляется обучение: русский</h5>
+    <h5>Срок действия государственной аккредитации до 02.04.2026 г.</h5>
+    <h5>Уровень образования: высшее образование (магистратура)</h5>
+
+    <table class="table table-light table-hover text-start">
+
+        <tr class="table-primary">
+            <th scope="col">Образовательная программа</th>
+            <th scope="col">Квалификация</th>
+            <th scope="col">Форма обучения</th>
+            <th scope="col">Срок обучения</th>
+            <th scope="col">Год набора</th>
+        </tr>
+
+        <tr>
+            <th scope="row">Информационное и программное обеспечение автоматизированных систем</th>
+            <td>Магистр</td>
+            <td>Очная</td>
+            <td>2 года</td>
+            <td>2020, 2021, 2022</td>
+        </tr>
+
+
+    </table>
+</div>
+
+
+<div class="mt-5 " id="09-03-04M" style="display:none;">
+
+    <h3>09.03.01 Программная инженерия</h3>
+    <h5>Язык, на котором осуществляется обучение: русский</h5>
+    <h5>Срок действия государственной аккредитации до 02.04.2026 г.</h5>
+    <h5>Уровень образования: высшее образование (магистратура)</h5>
+
+    <table class="table table-light table-hover text-start">
+
+        <tr class="table-primary">
+            <th scope="col">Образовательная программа</th>
+            <th scope="col">Квалификация</th>
+            <th scope="col">Форма обучения</th>
+            <th scope="col">Срок обучения</th>
+            <th scope="col">Год набора</th>
+        </tr>
+
+        <tr>
+            <th scope="row">Разработка информационно-телекоммуникационных систем</th>
+            <td>Магистр</td>
+            <td>Очная</td>
+            <td>2 года</td>
+            <td>2020, 2021, 2022</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Разработка информационно-телекоммуникационных систем</th>
+            <td>Магистр</td>
+            <td>Заочная</td>
+            <td>2 года 4 месяца</td>
+            <td>2020, 2021, 2022</td>
+        </tr>
+
+
+    </table>
+</div>

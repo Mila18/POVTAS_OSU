@@ -21,6 +21,7 @@ namespace POVTAS_OSU.Controllers
             return View(db.Documents.ToList());
         }
 
+
         // GET: Documents/Details/5
         public ActionResult Details(int? id)
         {

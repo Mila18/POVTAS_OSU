@@ -54,5 +54,30 @@ namespace POVTAS_OSU.Controllers
            
         }
 
+        public ActionResult Teachers()
+        {
+            return View(db.ChairConsists);
+        }
+
+        public ActionResult ResearchWorkAndActivities()
+        {
+            return View();
+        }
+
+        public ActionResult StudentsAndAlumnus()
+        {
+            return View(db.Documents);
+        }
+
+        public ActionResult Schoolchildren()
+        {
+            return View();
+        }
+
+        public ActionResult EducationalPrograms()
+        {
+            return View(db.EducationFields);
+        }
+
     }
 }

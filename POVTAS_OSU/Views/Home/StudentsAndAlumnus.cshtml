@@ -1,0 +1,54 @@
+﻿@model IEnumerable<POVTAS_OSU.Models.Document>
+
+@{
+    ViewBag.Title = "StudentsAndAlumnus";
+}
+
+<h2>Студентам и выпускникам</h2>
+
+<table class="table text-white">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocumentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocumentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DocumentNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.File)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.ChairId)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentNumber)
+            </td>
+            <td>
+                <a href="@item.File">Скачать</a>
+            </td>
+           
+        </tr>
+    }
+
+</table>

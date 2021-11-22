@@ -1,17 +1,411 @@
-﻿@{
-    Layout = null;
+﻿@model IEnumerable<POVTAS_OSU.Models.ChairConsist>
+
+@{
+    ViewBag.Title = "ChairConsist";
 }
 
-<!DOCTYPE html>
+<style>
+  
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
+        .ourTeam h2 {
+            color: #fff;
+            margin: 0 0 20px 0;
+        }
+
+        .ourTeam .i {
+            margin-top: 30px;
+        }
+
+            .ourTeam .i .c {
+                background: #fff;
+                -webkit-box-shadow: 0 4px 0 #0275d8;
+                -moz-box-shadow: 0 4px 0 #0275d8;
+                box-shadow: 0 4px 0 #0275d8;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -moz-background-clip: padding;
+                -webkit-background-clip: padding-box;
+                background-clip: padding-box;
+                position: relative;
+                overflow: hidden;
+                padding-bottom: 110px;
+            }
+
+                .ourTeam .i .c .wrap {
+                    position: relative;
+                }
+
+                    .ourTeam .i .c .wrap img {
+                        width: 100%;
+                        -webkit-border-top-left-radius: 5px;
+                        -webkit-border-top-right-radius: 5px;
+                        -moz-border-radius-topleft: 5px;
+                        -moz-border-radius-topright: 5px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        -webkit-transition: all .3s ease;
+                        -moz-transition: all .3s ease;
+                        -ms-transition: all .3s ease;
+                        -o-transition: all .3s ease;
+                    }
+
+                    .ourTeam .i .c .wrap .info {
+                        padding: 15px 0;
+                        position: absolute;
+                        top: 100%;
+                        width: 100%;
+                        -webkit-transition: all .3s ease;
+                        -moz-transition: all .3s ease;
+                        -ms-transition: all .3s ease;
+                        -o-transition: all .3s ease;
+                    }
+
+                        .ourTeam .i .c .wrap .info .name {
+                            margin: 0;
+                            font-size: 18px;
+                           
+                            font-weight: 700;
+                            margin: 0 0 8px 0;
+                        }
+
+                        .ourTeam .i .c .wrap .info .position {
+                            margin: 0;
+                            font-size: 14px;
+                            
+                            color: #555659;
+                        }
+
+                .ourTeam .i .c .more {
+                    position: absolute;
+                    bottom: -100%;
+                    width: 100%;
+                    -webkit-transition: all .3s ease;
+                    -moz-transition: all .3s ease;
+                    -ms-transition: all .3s ease;
+                    -o-transition: all .3s ease;
+                   
+            
+                }
+
+                    .ourTeam .i .c .more p {
+                        margin: 0 18px 30px 18px;
+                        line-height: 22px;
+                    }
+
+                    .ourTeam .i .c .more .socials {
+                        margin: 0 0 20px 0;
+                    }
+
+                        .ourTeam .i .c .more .socials a {
+                            display: inline-block;
+                            width: 40px;
+                            height: 40px;
+                            line-height: 40px;
+                            font-size: 22px;
+                            font-size: 2.2rem;
+                            color: #fff;
+                            margin: 0 0 0 3px;
+                            -webkit-border-radius: 4px;
+                            -moz-border-radius: 4px;
+                            border-radius: 4px;
+                            -moz-background-clip: padding;
+                            -webkit-background-clip: padding-box;
+                            background-clip: padding-box;
+                            text-align: center;
+                            -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, .1);
+                            -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, .1);
+                            box-shadow: 0 3px 0 rgba(0, 0, 0, .1);
+                        }
+
+                            .ourTeam .i .c .more .socials a:first-child {
+                                margin: 0;
+                            }
+
+                            
+
+                .ourTeam .i .c:hover img {
+                    -moz-opacity: 0;
+                    -khtml-opacity: 0;
+                    -webkit-opacity: 0;
+                    opacity: 0;
+                }
+
+                .ourTeam .i .c:hover .info {
+                    top: 0;
+                }
+
+                .ourTeam .i .c:hover .more {
+                    bottom: 0;
+                }
+</style>
+<div class="container mt-4">
+    <div class="section ourTeam">
+        <header class="text-center">
+            <h2>Преподаватели кафедры </h2>
+        </header>
+        <div class="row">
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Solovyov.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Соловьев Николай Алексеевич</h3>
+                            <h4 class="position">Заведующий кафедрой, доктор технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>
+                            Сфера научных интересов: теория принятия решений в системах автоматизированного управления, защита информационного и программного обеспечения автоматизированных систем.
+                        </p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Zubkova.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Зубкова Татьяна Михайловна</h3>
+                            <h4 class="position">Профессор, доктор технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>Сфера научных интересов: математическое моделирование технологических объектов, разработка программных систем по математическим моделям.</p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Volkova.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Волкова Татьяна Михайловна</h3>
+                            <h4 class="position">Доцент, кандидат технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>Сфера научных интересов: проектирование информационных систем, БД, хранилищ данных.</p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Gorbachev.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Горбачев Дмитрий Владимирович</h3>
+                            <h4 class="position">Доцент, кандидат технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>Сфера научных интересов: моделирование объектов автоматизированных систем обработки информации и управления, математические и программные модели технологических процессов обработки данных.</p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Chernoprudova.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Чернопрудова Елена Николаевна</h3>
+                            <h4 class="position">Доцент, кандидат технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>Сфера научных интересов: анализ методов обнаружения несанкционированных рассылок (спамов) в компьютерных сетях.</p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Tishina.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Тишина Наталья Александровна</h3>
+                            <h4 class="position">Доцент, кандидат технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>Сфера научных интересов: проблемы защиты компьютерной информации - системы обнаружения вторжения, нейросетевые технологии.</p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Semenov.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Семенов Анатолий Михайлович</h3>
+                            <h4 class="position">Доцент, кандидат технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>Сфера научных интересов: автоматизированные информационные системы управления.</p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Shudro.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Щудро Игорь Анатольевич</h3>
+                            <h4 class="position">Доцент, кандидат технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>
+                            Сфера научных интересов: отождествление информации в информационно-управляющих системах, cистемы обнаружения вторжений.
+
+                        </p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Tagirova.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Тагирова Лилия Фаритовна</h3>
+                            <h4 class="position">Доцент, кандидат педагогических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>
+                            Сфера научных интересов: системы распределенной обработки баз данных, работающих на основе архитектуры клиент-сервер. Проблемы обработки информации средствами скриптовых языков, работающих на стороне сервера.
+
+                        </p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Kostin.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Климачев Сергей Александрович</h3>
+                            <h4 class="position">Старший преподаватель</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>
+                            Повышение квалификации
+                            Цифровое обучение: методики, практики, инструменты (2021)
+                        </p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Natochnaya.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Наточная Елена Николаевна</h3>
+                            <h4 class="position">Доцент, кандидат педагогических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>Сфера научных интересов: проблемы информатизации и гуманитаризации образования.</p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Kostin.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Костин Владимир Николаевич</h3>
+                            <h4 class="position">Доцент, кандидат технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>
+                            Сфера научных интересов: системный анализ и оптимизация сложных систем.
+
+                        </p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Natochnaya.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Валеев Артем Фаатович</h3>
+                            <h4 class="position">Доцент, кандидат технических наук</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <p>
+                            Повышение квалификации
+                            Использование ресурсов электронной информационно-образовательной среды ОГУ в образовательной и научной деятельности в области математики и информационных технологий (2019)
+                        </p>
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 i">
+                <div class="c text-center">
+                    <div class="wrap">
+                        <img src="../../Images/Kostin.jpg" alt="#" width="270" height="270" class="img-responsive">
+                        <div class="info">
+                            <h3 class="name text-black">Шнякина Елена Александровна</h3>
+                            <h4 class="position">Старший преподаватель</h4>
+                        </div>
+                    </div>
+                    <div class="more text-black">
+                        <div class="socials">
+                            <button class="btn btn-outline-primary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
     </div>
-</body>
-</html>
+</div>
