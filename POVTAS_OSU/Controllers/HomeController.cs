@@ -19,22 +19,8 @@ namespace POVTAS_OSU.Controllers
             return View(contacts.ToList());
         }
 
-        //public ActionResult About()
-        //{
-        //    ViewBag.Message = "Your application description page.";
-
-        //    return View();
-        //}
-
-        //public ActionResult Contact()
-        //{
-        //    ViewBag.Message = "Your contact page.";
-        //    return View(db.Contacts);
-        //}
-
         public ActionResult Posts()
         {
-            ViewBag.Message = "Your contact page.";
             return View(db.Posts);
         }
 
@@ -54,10 +40,31 @@ namespace POVTAS_OSU.Controllers
            
         }
 
-        public ActionResult Teachers()
+        
+
+        public ActionResult Teachers(/*int? id*/)
         {
-            return View(db.ChairConsists);
+            var chairConsists = db.ChairConsists.Include(c => c.AcademicDegree).Include(c => c.AcademicTitle).Include(c => c.Activity).Include(c => c.Position);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //ChairConsist chairConsist = db.ChairConsists.Include(c => c.AcademicDegree)
+            //                                            .Include(c => c.AcademicTitle)
+            //                                            .Include(c => c.Activity)
+            //                                            .Include(c => c.Position)
+            //                                            .Include(c => c.Disciplines)
+            //                                            .Single(x => x.Id == id);
+            //if (chairConsist == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            
+            //return View(chairConsist);
+            return View(chairConsists.ToList());
         }
+
+
 
         public ActionResult ResearchWorkAndActivities()
         {
