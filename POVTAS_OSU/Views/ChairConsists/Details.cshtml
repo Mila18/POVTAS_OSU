@@ -4,9 +4,241 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Состав кафедры</h2>
+<style>
+    body {
+        margin-top: 20px;
+    }
 
-<div>
+    .icon-box.medium {
+        font-size: 20px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .icon-box {
+        font-size: 30px;
+        margin-bottom: 33px;
+        display: inline-block;
+        color: #ffffff;
+        height: 65px;
+        width: 65px;
+        line-height: 65px;
+        background-color: #7abfff;
+        text-align: center;
+        border-radius: 0.3rem;
+    }
+
+    .social-icon-style2 li a {
+        display: inline-block;
+        font-size: 14px;
+        text-align: center;
+        color: #ffffff;
+        background: #59b73f;
+        height: 41px;
+        line-height: 41px;
+        width: 41px;
+    }
+
+    .rounded-3 {
+        border-radius: 0.3rem !important;
+    }
+
+    .social-icon-style2 {
+        margin-bottom: 0;
+        display: inline-block;
+        padding-left: 10px;
+        list-style: none;
+    }
+
+        .social-icon-style2 li {
+            vertical-align: middle;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+    a, a:active, a:focus {
+        color: #616161;
+        text-decoration: none;
+        transition-timing-function: ease-in-out;
+        -ms-transition-timing-function: ease-in-out;
+        -moz-transition-timing-function: ease-in-out;
+        -webkit-transition-timing-function: ease-in-out;
+        -o-transition-timing-function: ease-in-out;
+        transition-duration: .2s;
+        -ms-transition-duration: .2s;
+        -moz-transition-duration: .2s;
+        -webkit-transition-duration: .2s;
+        -o-transition-duration: .2s;
+    }
+
+    .text-secondary, .text-secondary-hover:hover {
+        color: #3f5db7 !important;
+    }
+
+    .display-25 {
+        font-size: 1.4rem;
+    }
+
+    .text-primary, .text-primary-hover:hover {
+        color: #fff !important;
+    }
+
+    p {
+        margin: 0 0 20px;
+    }
+
+    .mb-1-6, .my-1-6 {
+        margin-bottom: 1.6rem;
+    }
+
+
+    /*Стили для списка преподаваемых дисциплин*/
+    .list-counter-square {
+        list-style: none;
+        counter-reset: list;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+        .list-counter-square > li {
+            position: relative;
+            display: block;
+            height: 2rem;
+            line-height: 2rem;
+            margin-left: 2rem;
+            margin-bottom: .25rem;
+            padding-left: .5rem;
+            padding-right: .5rem;
+            color: #fff;
+            background: #7abfff;
+            white-space: nowrap;
+        }
+
+            .list-counter-square > li:last-child {
+                margin-bottom: 0;
+            }
+
+            .list-counter-square > li::before {
+                content: counter(list);
+                counter-increment: list;
+                position: absolute;
+                left: -2rem;
+                top: 0;
+                bottom: 0;
+                width: 2rem;
+                line-height: 2rem;
+                text-align: center;
+                color: #fff;
+                background: rgba(122, 191, 255, 0.8);
+            }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
+            <div class="card border-0 shadow">
+                <img src="@Model.Photo" alt="...">
+                <div class="card-body p-1-9 p-xl-5">
+                    <div class="mb-4 text-black">
+                        <h5 class=" mb-3 text-start">@Html.DisplayFor(model => model.Surname) @Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.PatronymicName)</h5>
+                        
+                        <h6 class="text-secondary text-start">@Html.DisplayFor(model => model.Position.Title)</h6>
+                        <h6 class="text-secondary text-start">@Html.DisplayFor(model => model.AcademicDegree.Title)</h6>
+                        <h6 class="text-secondary text-start">@Html.DisplayFor(model => model.AcademicTitle.Title)</h6>
+                    </div>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3 text-start"><a href="#!"><i class="far fa-envelope display-25 me-3 text-secondary"></i>dakota@gmail.com</a></li>
+                        @*<li class="mb-3"><a href="#!"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>+012 (345) 6789</a></li>
+                        <li><a href="#!"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>205 Main Street, USA</a></li>*@
+                    </ul>
+                    @*<ul class="social-icon-style2 ps-0">
+                        <li><a href="#!" class="rounded-3"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#!" class="rounded-3"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#!" class="rounded-3"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="#!" class="rounded-3"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>*@
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="ps-lg-1-6 ps-xl-5">
+                <div class="mb-5 wow fadeIn">
+                    <div class="text-start mb-1-6 wow fadeIn">
+                        <h2 class="h1 mb-0 text-primary">#About Me</h2>
+                    </div>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                    <p class="mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                </div>
+                <div class="mb-5 wow fadeIn ">
+                    <div class="text-start mb-1-6 wow fadeIn">
+                        <h2 class="mb-0 text-primary">#Education</h2>
+                    </div>
+                    <div class="row mt-n4  ">
+                        <div class="col-sm-6 col-xl-4 mt-4 ">
+                            <div class="card text-center border-0 rounded-3">
+                                <div class="card-body bg-dark">
+                                    <i class="ti-bookmark-alt icon-box medium rounded-3 mb-4"></i>
+                                    <h3 class="h5 mb-3">Education</h3>
+                                    <p class="mb-0">University of defgtion, fecat complete ME of synage</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 mt-4">
+                            <div class="card text-center border-0 rounded-3">
+                                <div class="card-body bg-dark">
+                                    <i class="ti-pencil-alt icon-box medium rounded-3 mb-4"></i>
+                                    <h3 class="h5 mb-3">Career Start</h3>
+                                    <p class="mb-0">After complete engineer join HU Signage Ltd as a project manager</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-4 mt-4">
+                            <div class="card text-center border-0 rounded-3">
+                                <div class="card-body bg-dark">
+                                    <i class="ti-medall-alt icon-box medium rounded-3 mb-4"></i>
+                                    <h3 class="h5 mb-3">@Html.DisplayNameFor(model => model.WorkExperience)</h3>
+                                    <p class="mb-0" id="pid">@Html.DisplayFor(model => model.WorkExperience) </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wow fadeIn">
+                    <div class="text-start mb-1-6 wow fadeIn">
+                        <h2 class="mb-0 text-primary">#Преподаваемые дисциплины</h2>
+                    </div>
+
+
+                    <ol class="list-counter-square">
+                       @foreach (var item in Model.Disciplines)
+                        {
+                            <li>@item.Title</li>
+                        }
+
+                    </ol>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    function plural()
+    {
+        let p = document.getElementById('pid');
+        let n = p.innerText;
+        p.innerText = n + ' ' + ((((n % 10) == 1) && ((n % 100) != 11)) ? ("год") : (((((n % 10) >= 2) && ((n % 10) <= 4)) && (((n % 100) < 10) || ((n % 100) >= 20))) ? ("года") : ("лет")))
+    }
+
+    document.addEventListener("DOMContentLoaded", plural);
+</script>
+
+<!--<div>
     <h4>Подробная информация</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -72,17 +304,17 @@
 
         <dd>
             @Html.DisplayFor(model => model.WorkExperience)
-        </dd>
+        </dd>-->
 
         @*<dt>
-            @Html.DisplayNameFor(model => model.ChairId)
-        </dt>
+                @Html.DisplayNameFor(model => model.ChairId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ChairId)
-        </dd>*@
+            <dd>
+                @Html.DisplayFor(model => model.ChairId)
+            </dd>*@
 
-        <dt>
+        <!--<dt>
             <div class="control-label ">Дисциплины:</div>
         </dt>
 
@@ -96,8 +328,12 @@
         </dd>
 
     </dl>
-</div>
-<p>
-    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Назад", "Index")
-</p>
+</div>-->
+@if (User.IsInRole("admin"))
+{
+    <p class="mt-5">
+        @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id}) |
+        @Html.ActionLink("Назад", "Index")
+    </p>
+}
+
