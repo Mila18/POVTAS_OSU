@@ -24,6 +24,11 @@ namespace POVTAS_OSU.Controllers
             return View(db.Posts);
         }
 
+        public ActionResult Contact()
+        {
+            return View(db.Contacts);
+        }
+
         public ActionResult Disciplines(string Id)
         {
             

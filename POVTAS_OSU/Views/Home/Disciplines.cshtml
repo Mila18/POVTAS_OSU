@@ -10,6 +10,12 @@
 
 <h2>Дисциплины кафедры</h2>
 
+<style>
+    .option{
+        border-radius:10px;
+        outline:none;
+    }
+</style>
 
 @using (Html.BeginForm("Disciplines", "Home", FormMethod.Post))
 {
@@ -17,7 +23,7 @@
         <div class="container-fluid mb-2 mb-1">
             <div >
                 <select class="form-select form-select-lg mb-3 " aria-label=".form-select-lg example" name="Id">
-                    <option disabled selected value="0" name="Id">Выберите направление подготовки</option>
+                    <option disabled selected value="0" name="Id" class="option">Выберите направление подготовки</option>
                     @foreach (var item in educationFields)
                     {
                         <option name="Id" value="@item.Id"> @Html.DisplayFor(modelItem => item.Title)</option>
@@ -30,9 +36,9 @@
 
 }
 
-<table class="table table-light table-hover">
+<table class="table table-hover">
 
-    <tr class="table-primary">
+    <tr style="background-color: #7abfff; ">
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
@@ -45,10 +51,10 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td class="text-start pl-5">
+            <td class="table-light text-start pl-5">
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <td>
+            <td class="table-light">
                 @Html.DisplayFor(modelItem => item.EducationField.Title)
             </td>
         </tr>

@@ -10,17 +10,10 @@ using POVTAS_OSU.Models;
 
 namespace POVTAS_OSU.Controllers
 {
-    [Authorize(Roles = "admin")]
+    
     public class ChairConsistsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
-        // GET: ChairConsists
-        public ActionResult Index()
-        {
-            var chairConsists = db.ChairConsists.Include(c => c.AcademicDegree).Include(c => c.AcademicTitle).Include(c => c.Activity).Include(c => c.Position);
-            return View(chairConsists.ToList());
-        }
 
         // GET: ChairConsists/Details/5
         public ActionResult Details(int? id)
@@ -41,6 +34,17 @@ namespace POVTAS_OSU.Controllers
             }
             return View(chairConsist);
         }
+
+        [Authorize(Roles = "admin")]
+
+        // GET: ChairConsists
+        public ActionResult Index()
+        {
+            var chairConsists = db.ChairConsists.Include(c => c.AcademicDegree).Include(c => c.AcademicTitle).Include(c => c.Activity).Include(c => c.Position);
+            return View(chairConsists.ToList());
+        }
+
+       
 
         // GET: ChairConsists/Create
         public ActionResult Create()
