@@ -119,7 +119,7 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] HttpPostedFileBase Photo, ChairConsist chairConsist, string oldPhoto, ICollection<int> sel)
+        public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,TeachingExperience,Education,Details,Emails,Schedule,Training,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] HttpPostedFileBase Photo, ChairConsist chairConsist, string oldPhoto, ICollection<int> sel)
         {
             if (ModelState.IsValid)
             {

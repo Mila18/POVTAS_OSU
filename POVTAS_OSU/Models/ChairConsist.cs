@@ -19,8 +19,27 @@ namespace POVTAS_OSU.Models
         [Display(Name = "Отчество")]
         public string PatronymicName { get; set; }
 
-        [Display(Name = "Стаж работы")]
+        [Display(Name = "Общий стаж работы")]
         public string WorkExperience { get; set; }
+
+        [Display(Name = "Стаж педагогической работы")]
+        public string TeachingExperience { get; set; }
+
+        [Display(Name = "Образование")]
+        public string Education { get; set; }
+
+        [Display(Name = "Подробнее")]
+        public string Details { get; set; }
+
+        [Display(Name = "Почта")]
+        public string Emails { get; set; }
+
+        [Display(Name = "Расписание преподавателя")]
+        public string Schedule { get; set; }
+
+        [Display(Name = "Повышение квалификации")]
+        public string Training { get; set; }
+
         [Display(Name = "Фото")]
         public string Photo { get; set; }
 

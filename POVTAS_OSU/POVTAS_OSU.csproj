@@ -219,6 +219,14 @@
     <Compile Include="Migrations\202105251220591_New prop-s File and Date.Designer.cs">
       <DependentUpon>202105251220591_New prop-s File and Date.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112070844365_ChairConsist.cs" />
+    <Compile Include="Migrations\202112070844365_ChairConsist.Designer.cs">
+      <DependentUpon>202112070844365_ChairConsist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112070907581_ChairConsistTE.cs" />
+    <Compile Include="Migrations\202112070907581_ChairConsistTE.Designer.cs">
+      <DependentUpon>202112070907581_ChairConsistTE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicDegree.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
@@ -545,6 +553,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105251220591_New prop-s File and Date.resx">
       <DependentUpon>202105251220591_New prop-s File and Date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112070844365_ChairConsist.resx">
+      <DependentUpon>202112070844365_ChairConsist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112070907581_ChairConsistTE.resx">
+      <DependentUpon>202112070907581_ChairConsistTE.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
