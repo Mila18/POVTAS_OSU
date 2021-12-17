@@ -45,7 +45,10 @@ namespace POVTAS_OSU.Controllers
            
         }
 
-        
+        public ActionResult Reports()
+        {
+            return View(db.Posts);
+        }
 
         public ActionResult Teachers(/*int? id*/)
         {

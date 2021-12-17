@@ -227,6 +227,10 @@
     <Compile Include="Migrations\202112070907581_ChairConsistTE.Designer.cs">
       <DependentUpon>202112070907581_ChairConsistTE.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112170545503_Posts+2.cs" />
+    <Compile Include="Migrations\202112170545503_Posts+2.Designer.cs">
+      <DependentUpon>202112170545503_Posts+2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicDegree.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
@@ -521,6 +525,7 @@
     <Content Include="Views\Home\StudentsAndAlumnus.cshtml" />
     <Content Include="Views\Home\Schoolchildren.cshtml" />
     <Content Include="Views\Home\ResearchWorkAndActivities.cshtml" />
+    <Content Include="Views\Home\Reports.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -559,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112070907581_ChairConsistTE.resx">
       <DependentUpon>202112070907581_ChairConsistTE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112170545503_Posts+2.resx">
+      <DependentUpon>202112170545503_Posts+2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
