@@ -10,13 +10,7 @@
     <h4>Подробная информация</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EventReportOf.Report)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EventReportOf.Report)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Id)
@@ -42,9 +36,17 @@
             @Html.DisplayFor(model => model.Date)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportFile)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Редактировать", "Edit", new { id = Model.EventReportId }) |
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Назад", "Index")
 </p>

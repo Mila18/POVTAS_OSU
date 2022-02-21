@@ -32,7 +32,7 @@ namespace POVTAS_OSU.Models
         public DbSet<Document> Documents { get; set; }
         public DbSet<CalendarOfEvent> CalendarOfEvents { get; set; }
         public DbSet<Classroom> Classrooms  { get; set; }
-        public DbSet<EventReport> EventReports  { get; set; }
+        
         public DbSet<Discipline> Disciplines  { get; set; }
         public DbSet<EducationField> EducationFields  { get; set; }
         public DbSet<MaterialSupport> MaterialSupports  { get; set; }

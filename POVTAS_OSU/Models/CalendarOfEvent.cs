@@ -16,9 +16,14 @@ namespace POVTAS_OSU.Models
         [Display(Name = "Дата")]
         public string Date { get; set; }
 
-        [Key]
-        [ForeignKey("EventReportOf")]
-        public int EventReportId { get; set; }
-        public virtual EventReport EventReportOf { get; set; }
+        [Display(Name = "Отчет")]
+        public string ReportFile { get; set; }
+
+        public int ChairId { get; set; }
+        public Chair Chair { get; set; }
+        //[Key]
+        //[ForeignKey("EventReportOf")]
+        //public int EventReportId { get; set; }
+        //public virtual EventReport EventReportOf { get; set; }
     }
 }
