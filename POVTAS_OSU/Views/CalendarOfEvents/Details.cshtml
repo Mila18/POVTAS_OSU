@@ -11,11 +11,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.EventReportOf.Report)
+            @Html.DisplayNameFor(model => model.ReportFile)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.EventReportOf.Report)
+            @Html.DisplayFor(model => model.ReportFile)
         </dd>
 
         <dt>
@@ -45,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Редактировать", "Edit", new { id = Model.EventReportId }) |
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Назад", "Index")
 </p>

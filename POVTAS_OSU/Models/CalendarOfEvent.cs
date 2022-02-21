@@ -10,15 +10,19 @@ namespace POVTAS_OSU.Models
     //Календарь мероприятий
     public class CalendarOfEvent
     {
+        [Key]
         public int Id { get; set; }
         [Display(Name = "Событие")]
         public string Event { get; set; }
         [Display(Name = "Дата")]
         public string Date { get; set; }
 
-        [Key]
-        [ForeignKey("EventReportOf")]
-        public int EventReportId { get; set; }
-        public virtual EventReport EventReportOf { get; set; }
+        [Display(Name = "Отчет")]
+        public string ReportFile { get; set; }
+
+        //[Key]
+        //[ForeignKey("EventReportOf")]
+        //public int EventReportId { get; set; }
+        //public virtual EventReport EventReportOf { get; set; }
     }
 }
