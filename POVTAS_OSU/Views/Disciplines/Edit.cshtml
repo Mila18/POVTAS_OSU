@@ -17,25 +17,23 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label container-sm fw-bold" })
+            <div class="container-sm">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class = "control-label col-md-2"><b>Направление подготовки</b></div>
-            <div class="col-md-10">
+            <div class = "control-label container-sm"><b>Направление подготовки</b></div>
+            <div class="container-sm">
                 @Html.DropDownList("EducationFieldId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EducationFieldId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Сохранить" class="btn btn-default" />
-            </div>
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
         </div>
     </div>
 }
