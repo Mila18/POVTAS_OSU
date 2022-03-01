@@ -178,7 +178,7 @@
                                 <div class="card-body bg-dark">
                                     <i class="ti-bookmark-alt icon-box medium rounded-3 mb-4"></i>
                                     <h3 class="h5 mb-3">@Html.DisplayNameFor(model => model.TeachingExperience)</h3>
-                                    <p class="mb-0" id="p1id">@Html.DisplayFor(model => model.TeachingExperience)</p>
+                                    <p class="mb-0 years">@Html.DisplayFor(model => model.TeachingExperience)</p>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                                 <div class="card-body bg-dark">
                                     <i class="ti-medall-alt icon-box medium rounded-3 mb-4"></i>
                                     <h3 class="h5 mb-3">@Html.DisplayNameFor(model => model.WorkExperience)</h3>
-                                    <p class="mb-0" id="p2id">@Html.DisplayFor(model => model.WorkExperience) </p>
+                                    <p class="mb-0 years">@Html.DisplayFor(model => model.WorkExperience) </p>
                                 </div>
                             </div>
                         </div>
@@ -225,17 +225,20 @@
 
 <script>
 
-    function plural()
-    {
-        let p1= document.getElementById('p1id');
-        let p2 = document.getElementById('p2id');
-        let n = p1.innerText;
-        let m = p2.innerText;
-        p1.innerText = n + ' ' + ((((n % 10) == 1) && ((n % 100) != 11)) ? ("год") : (((((n % 10) >= 2) && ((n % 10) <= 4)) && (((n % 100) < 10) || ((n % 100) >= 20))) ? ("года") : ("лет")))
-        p2.innerText = m + ' ' + ((((m % 10) == 1) && ((m % 100) != 11)) ? ("год") : (((((m % 10) >= 2) && ((m % 10) <= 4)) && (((m % 100) < 10) || ((m % 100) >= 20))) ? ("года") : ("лет")))
+    function plural() {
+        /*let p1 = document.getElementById('p1id');*/
+        /*let n = p1.innerText;*/
+        //p1.innerText = n + ' ' + ((((n % 10) == 1) && ((n % 100) != 11)) ? ("год") : (((((n % 10) >= 2) && ((n % 10) <= 4)) && (((n % 100) < 10) || ((n % 100) >= 20))) ? ("года") : ("лет")))
+
+        let elements = document.getElementsByClassName("years");
+        for (var i = 0; i < elements.length; i++) {
+            let m = elements[i].innerText;
+            elements[i].innerText = m + ' ' + ((((m % 10) == 1) && ((m % 100) != 11)) ? ("год") : (((((m % 10) >= 2) && ((m % 10) <= 4)) && (((m % 100) < 10) || ((m % 100) >= 20))) ? ("года") : ("лет")))
+        }
     }
 
     document.addEventListener("DOMContentLoaded", plural);
+
 </script>
 
 <!--<div>

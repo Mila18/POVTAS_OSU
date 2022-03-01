@@ -11,21 +11,7 @@
     <h4>Удаление</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ReportFile)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReportFile)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Id)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Event)
@@ -43,13 +29,25 @@
             @Html.DisplayFor(model => model.Date)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportFile)
+        </dd>
+
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            <input type="submit" value="Удалить" class="btn btn-primary" />
+        </div>
+
+        <div class="mt-3">
             @Html.ActionLink("Назад", "Index")
         </div>
     }
