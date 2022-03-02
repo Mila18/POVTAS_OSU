@@ -18,7 +18,8 @@ namespace POVTAS_OSU.Controllers
         // GET: Documents
         public ActionResult Index()
         {
-            return View(db.Documents.ToList());
+            var documents = db.Documents.Include(d => d.DocumentType).OrderBy(x => x.DocumentType.Title);
+            return View(documents.ToList());
         }
 
 
@@ -40,6 +41,7 @@ namespace POVTAS_OSU.Controllers
         // GET: Documents/Create
         public ActionResult Create()
         {
+            ViewBag.DocumentTypeId = new SelectList(db.DocumentType, "Id", "Title");
             return View();
         }
 
@@ -48,7 +50,7 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,DocumentType,DocumentDate,DocumentNumber,ChairId")] HttpPostedFileBase File, Document document)
+        public ActionResult Create([Bind(Include = "Id,Title,DocumentDate,DocumentNumber,ChairId, DocumentTypeId")] HttpPostedFileBase File, Document document)
         {
             if (ModelState.IsValid)
             {
@@ -78,6 +80,7 @@ namespace POVTAS_OSU.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.DocumentTypeId = new SelectList(db.DocumentType, "Id", "Title", document.DocumentTypeId);
             return View(document);
         }
 
@@ -86,7 +89,7 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,DocumentType,DocumentDate,DocumentNumber,ChairId")] HttpPostedFileBase File, Document document, string oldFile)
+        public ActionResult Edit([Bind(Include = "Id,Title,DocumentDate,DocumentNumber,ChairId,DocumentTypeId")] HttpPostedFileBase File, Document document, string oldFile)
         {
             if (ModelState.IsValid)
             {
@@ -101,6 +104,7 @@ namespace POVTAS_OSU.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.DocumentTypeId = new SelectList(db.DocumentType, "Id", "Title", document.DocumentTypeId);
             return View(document);
         }
 

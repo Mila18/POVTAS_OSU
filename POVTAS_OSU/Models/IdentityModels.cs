@@ -30,6 +30,7 @@ namespace POVTAS_OSU.Models
         public DbSet<Chair> Chairs { get; set; }
 
         public DbSet<Document> Documents { get; set; }
+        public DbSet<DocumentType> DocumentType { get; set; }
         public DbSet<CalendarOfEvent> CalendarOfEvents { get; set; }
         public DbSet<Classroom> Classrooms  { get; set; }
 

@@ -50,25 +50,10 @@ namespace POVTAS_OSU.Controllers
             return View(db.Posts);
         }
 
-        public ActionResult Teachers(/*int? id*/)
+        public ActionResult Teachers()
         {
             var chairConsists = db.ChairConsists.Include(c => c.AcademicDegree).Include(c => c.AcademicTitle).Include(c => c.Activity).Include(c => c.Position);
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            //ChairConsist chairConsist = db.ChairConsists.Include(c => c.AcademicDegree)
-            //                                            .Include(c => c.AcademicTitle)
-            //                                            .Include(c => c.Activity)
-            //                                            .Include(c => c.Position)
-            //                                            .Include(c => c.Disciplines)
-            //                                            .Single(x => x.Id == id);
-            //if (chairConsist == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            
-            //return View(chairConsist);
+           
             return View(chairConsists.ToList());
         }
 
@@ -79,9 +64,18 @@ namespace POVTAS_OSU.Controllers
             return View();
         }
 
-        public ActionResult StudentsAndAlumnus()
+        public ActionResult StudentsAndAlumnus(string Id)
         {
-            return View(db.Documents);
+            var documents = db.Documents.Include(d => d.DocumentType).OrderBy(x => x.DocumentType.Title);
+            ViewBag.DocumentTypes = db.DocumentType.ToList();
+            if (Id != null)
+            {
+                return View(documents.Where(x => x.DocumentTypeId.ToString() == Id).ToList());
+            }
+            else
+            {
+                return View(new List<Document>());
+            }
         }
 
         public ActionResult Schoolchildren()

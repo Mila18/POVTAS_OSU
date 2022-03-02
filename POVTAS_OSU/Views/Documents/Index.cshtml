@@ -15,10 +15,10 @@
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DocumentType)
+            @Html.DisplayNameFor(model => model.DocumentDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DocumentDate)
+            @Html.DisplayNameFor(model => model.DocumentType.Title)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DocumentNumber)
@@ -27,35 +27,36 @@
             @Html.DisplayNameFor(model => model.File)
         </th>
         @*<th>
-            @Html.DisplayNameFor(model => model.ChairId)
-        </th>*@
+                @Html.DisplayNameFor(model => model.ChairId)
+            </th>*@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td class="table-light">
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td class="table-light">
-            @Html.DisplayFor(modelItem => item.DocumentType)
-        </td>
-        <td class="table-light">
-            @Html.DisplayFor(modelItem => item.DocumentDate)
-        </td>
-        <td class="table-light">
-            @Html.DisplayFor(modelItem => item.DocumentNumber)
-        </td>
-        <td class="table-light">
-            <a href="@item.File">Скачать</a>
-        </td>
-        
-        <td class="table-light">
-            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
-           
-            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="table-light">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td class="table-light">
+                @Html.DisplayFor(modelItem => item.DocumentDate)
+            </td>
+            <td class="table-light">
+                @Html.DisplayFor(modelItem => item.DocumentType.Title)
+            </td>
+            <td class="table-light">
+                @Html.DisplayFor(modelItem => item.DocumentNumber)
+            </td>
+            <td class="table-light">
+                <a href="@item.File">Скачать</a>
+            </td>
+
+            <td class="table-light">
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
