@@ -32,9 +32,11 @@ namespace POVTAS_OSU.Models
         public string Details { get; set; }
 
         [Display(Name = "Почта")]
+        [DataType(DataType.EmailAddress)]
         public string Emails { get; set; }
 
         [Display(Name = "Расписание преподавателя")]
+        [DataType(DataType.Url)]
         public string Schedule { get; set; }
 
         [Display(Name = "Повышение квалификации")]

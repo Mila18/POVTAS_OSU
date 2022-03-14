@@ -88,5 +88,9 @@ namespace POVTAS_OSU.Controllers
             return View(db.EducationFields);
         }
 
+        public ActionResult Support()
+        {
+            return View();
+        }
     }
 }
