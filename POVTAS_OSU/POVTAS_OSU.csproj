@@ -239,6 +239,10 @@
     <Compile Include="Migrations\202203020423353_DocTypeNewClass.Designer.cs">
       <DependentUpon>202203020423353_DocTypeNewClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203141359417_notNullPhoto.cs" />
+    <Compile Include="Migrations\202203141359417_notNullPhoto.Designer.cs">
+      <DependentUpon>202203141359417_notNullPhoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicDegree.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
@@ -582,6 +586,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203020423353_DocTypeNewClass.resx">
       <DependentUpon>202203020423353_DocTypeNewClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203141359417_notNullPhoto.resx">
+      <DependentUpon>202203141359417_notNullPhoto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

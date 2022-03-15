@@ -66,7 +66,7 @@ namespace POVTAS_OSU.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")]HttpPostedFileBase Photo, ChairConsist chairConsist, ICollection<int> sel)
         {
-            if (ModelState.IsValid && !Regex.Match(chairConsist.Name,@"^[А-Я][а-яА-я\s]*$").Success)
+            if (ModelState.IsValid)
             {
                 if (Photo != null)
                 {
@@ -79,10 +79,7 @@ namespace POVTAS_OSU.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            else
-            {
-                ModelState.AddModelError("Name", "Некорректно введено Имя");
-            }
+           
 
             ViewBag.AcademicDegreeId = new SelectList(db.AcademicDegrees, "Id", "Title", chairConsist.AcademicDegreeId);
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title", chairConsist.AcademicTitleId);
@@ -126,10 +123,10 @@ namespace POVTAS_OSU.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,TeachingExperience,Education,Details,Emails,Schedule,Training,ActivityId,AcademicTitleId,AcademicDegreeId,PositionId,ChairId")] HttpPostedFileBase Photo, ChairConsist chairConsist, string oldPhoto, ICollection<int> sel)
         {
-            string message;
-            string field;
-            bool validateResult = Validate(chairConsist, out message, out field);
-            if (ModelState.IsValid && validateResult)
+        //    string message;
+        //    string field;
+        //    bool validateResult = Validate(chairConsist, out message, out field); /*&& validateResult*/
+            if (ModelState.IsValid )
             {
                 if (Photo != null)
                 {
@@ -151,11 +148,11 @@ namespace POVTAS_OSU.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            else if (!validateResult)
-            {
-                ModelState.AddModelError(field, message);
-                chairConsist.Photo = oldPhoto;
-            }
+            //else if (!validateResult)
+            //{
+            //    ModelState.AddModelError(field, message);
+            //    chairConsist.Photo = oldPhoto;
+            //}
            
             
             ViewBag.AcademicDegreeId = new SelectList(db.AcademicDegrees, "Id", "Title", chairConsist.AcademicDegreeId);
@@ -167,47 +164,47 @@ namespace POVTAS_OSU.Controllers
             return View(chairConsist);
         }
 
-        private bool Validate (ChairConsist chairConsist, out string errorMessage, out string errorField)
-        {
-            errorMessage = "";
-            errorField = "";
+        //private bool Validate (ChairConsist chairConsist, out string errorMessage, out string errorField)
+        //{
+        //    errorMessage = "";
+        //    errorField = "";
 
-            if(!Regex.Match(chairConsist.Name, @"^[А-Я][а-яА-я\s]*$").Success)
-            {
-                errorMessage = "Имя введено неверно";
-                errorField = "Name";
-                return false;
-            }
+        //    if(!Regex.Match(chairConsist.Name, @"^[А-Я][а-яА-я\s]*$").Success)
+        //    {
+        //        errorMessage = "Имя введено неверно";
+        //        errorField = "Name";
+        //        return false;
+        //    }
 
-            if (!Regex.Match(chairConsist.Surname, @"^[А-Я][а-яА-я\s]*$").Success)
-            {
-                errorMessage = "Фамилия введена неверно";
-                errorField = "Surname";
-                return false;
-            }
+        //    if (!Regex.Match(chairConsist.Surname, @"^[А-Я][а-яА-я\s]*$").Success)
+        //    {
+        //        errorMessage = "Фамилия введена неверно";
+        //        errorField = "Surname";
+        //        return false;
+        //    }
 
-            if (!Regex.Match(chairConsist.PatronymicName, @"^[А-Я][а-яА-я\s]*$").Success)
-            {
-                errorMessage = "Отчество введено неверно";
-                errorField = "PatronymicName";
-                return false;
-            }
+        //    if (!Regex.Match(chairConsist.PatronymicName, @"^[А-Я][а-яА-я\s]*$").Success)
+        //    {
+        //        errorMessage = "Отчество введено неверно";
+        //        errorField = "PatronymicName";
+        //        return false;
+        //    }
 
-            if (!Regex.Match(chairConsist.TeachingExperience, @"^[0-9]*$").Success)
-            {
-                errorMessage = "Стаж введен неверно и может содержать только цифры";
-                errorField = "TeachingExperience";
-                return false;
-            }
+        //    if (!Regex.Match(chairConsist.TeachingExperience, @"^[0-9]*$").Success)
+        //    {
+        //        errorMessage = "Стаж введен неверно и может содержать только цифры";
+        //        errorField = "TeachingExperience";
+        //        return false;
+        //    }
 
-            if (!Regex.Match(chairConsist.WorkExperience, @"^[0-9]*$").Success)
-            {
-                errorMessage = "Стаж введен неверно и может содержать только цифры";
-                errorField = "WorkExperience";
-                return false;
-            }
-            return true;
-        }
+        //    if (!Regex.Match(chairConsist.WorkExperience, @"^[0-9]*$").Success)
+        //    {
+        //        errorMessage = "Стаж введен неверно и может содержать только цифры";
+        //        errorField = "WorkExperience";
+        //        return false;
+        //    }
+        //    return true;
+        //}
 
         // GET: ChairConsists/Delete/5
         public ActionResult Delete(int? id)
