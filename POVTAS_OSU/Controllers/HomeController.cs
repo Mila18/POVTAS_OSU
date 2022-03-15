@@ -36,10 +36,12 @@ namespace POVTAS_OSU.Controllers
             ViewBag.EducationFields = db.EducationFields.ToList();
             if (Id != null)
             {
+                ViewBag.Id = Id;
                 return View(disciplines.Where(x => x.EducationFieldId.ToString() == Id).ToList());
             }
             else
             {
+                ViewBag.Id = 0;
                 return View(new List<Discipline>());
             }
            

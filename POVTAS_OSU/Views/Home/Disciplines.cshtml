@@ -4,6 +4,7 @@
 
 @{
     ViewBag.Title = "Disciplines";
+    int Id = Convert.ToInt32(ViewBag.Id);
     List<EducationField> educationFields = ViewBag.EducationFields;
 }
 
@@ -23,10 +24,10 @@
         <div class="container-fluid mb-2 mb-1">
             <div >
                 <select class="form-select form-select-lg mb-3 " aria-label=".form-select-lg example" name="Id">
-                    <option disabled selected value="0" name="Id" class="option">Выберите направление подготовки</option>
+                    <option disabled @if (Id == 0) {@Html.Raw("selected");} value="0" name="Id" class="option">Выберите направление подготовки</option>
                     @foreach (var item in educationFields)
                     {
-                        <option name="Id" value="@item.Id"> @Html.DisplayFor(modelItem => item.Title)</option>
+                        <option name="Id" @if (Id == item.Id) { @Html.Raw("selected"); } value="@item.Id"> @Html.DisplayFor(modelItem => item.Title)</option>
                     }
                 </select>
             </div>
