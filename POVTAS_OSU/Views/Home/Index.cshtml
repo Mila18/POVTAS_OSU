@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Home Page";
 }
-<div>
+
     <style>
         body {
             min-width: min-content;
@@ -112,6 +112,15 @@
             background: -moz-linear-gradient(270deg, rgb(250, 250, 250) 4%, rgb(139, 199, 255), rgb(0, 131, 255));
             background: linear-gradient(270deg, rgb(250, 250, 250) 4%, rgb(139, 199, 255), rgb(0, 131, 255));
         }
+        div.card {
+            transition-duration: 1s;
+            transition-property: all;
+        }
+        div.card:hover {
+            box-shadow: 1px 1px 10px darkgray;
+            
+           
+        }
     </style>
 
 
@@ -150,7 +159,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center bg-light text-dark my-5">
+        <div class="row align-items-center  text-dark my-5" style="background-color: #F5F7FA;">
 
             <div class="col-md-6 text-start py-5 mt-3">
 
@@ -183,12 +192,97 @@
             </div>
         </div>
 
-        <div class="row bg-light text-dark text-wrap text-break my-5">
+        <div class="row text-dark text-wrap text-break my-5" style="background-color: #F5F7FA;">
+
+
+
+
+
+
 
             <div class="row my-4">
                 <h4 class=" text-center mx-3">Деятельность кафедры</h4>
             </div>
-            <div class="row mb-4">
+
+            <div class="row mt-3">
+                <div class="col-xl-3 col-sm-6 col-12 ">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="icon-pencil primary font-large-2 float-left"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h6>Образовательные программы</h6>
+
+                                    </div>
+                                    
+                                    <a href="../../Home/EducationalPrograms" class="stretched-link"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="icon-speech warning font-large-2 float-left"></i>
+
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h6>НИР и мероприятия</h6>
+
+                                    </div>
+                                </div>
+                                <a href="../../Home/ResearchWorkAndActivities" class="stretched-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="icon-graduation success font-large-2 float-left"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h6>Студентам и <br> выпускникам</h6>
+
+                                    </div>
+                                </div>
+                                <a href="../../Home/StudentsAndAlumnus" class="stretched-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="align-self-center">
+                                        <i class="icon-bell danger font-large-2 float-left"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h6>Школьникам</h6>
+
+                                    </div>
+                                </div>
+                                <a href="../../Home/Schoolchildren" class="stretched-link"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @*<div class="row mb-4">
                 <div class="col-lg-3 col-sm-6 col-12 my-2">
                     <button type="button" class="btn" style="background-color: #7abfff; ">
                         <a class="text-white" href="../../Home/EducationalPrograms">Образовательные программы</a>
@@ -199,62 +293,62 @@
                         <a class="text-white" href="../../Home/ResearchWorkAndActivities">НИР и мероприятия</a>
                     </button>
                 </div>
-               <div class="col-lg-3 col-sm-6 col-12 my-2">
-                   <button type="button" class="btn" style="background-color: #7abfff; ">
-                       <a class="text-white" href="../../Home/StudentsAndAlumnus">Студентам и выпускникам</a>
-                   </button>
-               </div>
-               <div class="col-lg-3 col-sm-6 col-12 my-2">
-                   <button type="button" class="btn" style="background-color: #7abfff; ">
-                       <a class="text-white" href="../../Home/Schoolchildren">Школьникам</a>
-                   </button>
-               </div>
-               
-            </div>
+                <div class="col-lg-3 col-sm-6 col-12 my-2">
+                    <button type="button" class="btn" style="background-color: #7abfff; ">
+                        <a class="text-white" href="../../Home/StudentsAndAlumnus">Студентам и выпускникам</a>
+                    </button>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-12 my-2">
+                    <button type="button" class="btn" style="background-color: #7abfff; ">
+                        <a class="text-white" href="../../Home/Schoolchildren">Школьникам</a>
+                    </button>
+                </div>
+
+            </div>*@
 
 
             @*
-                <div class="col-6 mt-5">
+        <div class="col-6 mt-5">
 
-                    <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
 
-                        <div class="accordion-item ">
-                            <h2 class="accordion-header " id="headingOne">
-                                <button class="accordion-button collapsed text-white fs-5" style="background-color: #7abfff; " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    231000 -"Программная инженерия"
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body text-dark">
-                                    <ul class="fs-5">
-                                        <li>бакалавриатура по профилю "Разработка программно-информационных систем"</li>
-                                        <li>магистратура по профилю "Разработка информационно-телекоммуникационных систем"</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed text-white fs-5" style="background-color: #7abfff; " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    230100 -"Информатика и вычислительная техника"
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body text-dark">
-                                    <ul class="fs-5">
-                                        <li>бакалавриатура по профилю "Программное обеспечение средств вычислительной техники и автоматизированных систем"</li>
-                                        <li>магистратура по профилю "Информационное и программное обеспечение автоматизированных систем"</li>
-                                    </ul>
-                                </div>
-                            </div>
+                <div class="accordion-item ">
+                    <h2 class="accordion-header " id="headingOne">
+                        <button class="accordion-button collapsed text-white fs-5" style="background-color: #7abfff; " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            231000 -"Программная инженерия"
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-dark">
+                            <ul class="fs-5">
+                                <li>бакалавриатура по профилю "Разработка программно-информационных систем"</li>
+                                <li>магистратура по профилю "Разработка информационно-телекоммуникационных систем"</li>
+                            </ul>
                         </div>
                     </div>
-
                 </div>
-                <div class="container-fluid">
-                    <button type="button" class="btn btn-lg my-5" style="background-color: #7abfff; "><a class="text-white" href="../Home/EducationalPrograms">Подробнее</a></button>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed text-white fs-5" style="background-color: #7abfff; " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            230100 -"Информатика и вычислительная техника"
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-dark">
+                            <ul class="fs-5">
+                                <li>бакалавриатура по профилю "Программное обеспечение средств вычислительной техники и автоматизированных систем"</li>
+                                <li>магистратура по профилю "Информационное и программное обеспечение автоматизированных систем"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                </div>*@
+        </div>
+        <div class="container-fluid">
+            <button type="button" class="btn btn-lg my-5" style="background-color: #7abfff; "><a class="text-white" href="../Home/EducationalPrograms">Подробнее</a></button>
+
+        </div>*@
 
 
         </div>
