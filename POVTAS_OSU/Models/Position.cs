@@ -12,6 +12,7 @@ namespace POVTAS_OSU.Models
         public Position()
         {
             ChairConsists = new List<ChairConsist>();
+            SupportStaffs = new List<SupportStaff>();
         }
         
         public int Id { get; set; }
@@ -21,5 +22,7 @@ namespace POVTAS_OSU.Models
         public string PositionKey { get; set; }
 
         public ICollection<ChairConsist> ChairConsists;
+
+        public ICollection<SupportStaff> SupportStaffs;
     }
 }
