@@ -47,6 +47,23 @@ namespace POVTAS_OSU.Controllers
            
         }
 
+        public ActionResult StudentsAndAlumnus(string Id)
+        {
+            var documents = db.Documents.Include(d => d.DocumentType).OrderBy(x => x.DocumentType.Title);
+            ViewBag.DocumentTypes = db.DocumentType.ToList();
+            if (Id != null)
+            {
+                ViewBag.Id = Id;
+                return View(documents.Where(x => x.DocumentTypeId.ToString() == Id).ToList());
+            }
+            else
+            {
+                ViewBag.Id = 0;
+                return View(new List<Document>());
+            }
+        }
+
+
         public ActionResult Reports()
         {
             return View(db.Posts);
@@ -66,20 +83,7 @@ namespace POVTAS_OSU.Controllers
             return View();
         }
 
-        public ActionResult StudentsAndAlumnus(string Id)
-        {
-            var documents = db.Documents.Include(d => d.DocumentType).OrderBy(x => x.DocumentType.Title);
-            ViewBag.DocumentTypes = db.DocumentType.ToList();
-            if (Id != null)
-            {
-                return View(documents.Where(x => x.DocumentTypeId.ToString() == Id).ToList());
-            }
-            else
-            {
-                return View(new List<Document>());
-            }
-        }
-
+        
         public ActionResult Schoolchildren()
         {
             return View();

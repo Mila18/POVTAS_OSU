@@ -43,21 +43,21 @@
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.EducationField.Title)
-        </th>
+        </th>*@
         
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td class="table-light text-start pl-5">
+            <td class="table-light text-center pl-5">
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <td class="table-light">
+            @*<td class="table-light">
                 @Html.DisplayFor(modelItem => item.EducationField.Title)
-            </td>
+            </td>*@
         </tr>
     }
 
