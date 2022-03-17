@@ -13,7 +13,7 @@
     <tr style="background-color: #7abfff; ">
 
         <th>
-            @Html.DisplayNameFor(model => model.FullName)
+            ФИО
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Position.Title)
@@ -62,7 +62,7 @@
                 @Html.DisplayFor(modelItem => item.Education)
             </td>
             <td class="table-light">
-                @Html.DisplayFor(modelItem => item.Photo)
+                <img src="@item.Photo" width="100 vh" height="130 vw" />
             </td>
             @*<td class="table-light">
                     @Html.DisplayFor(modelItem => item.ChairId)

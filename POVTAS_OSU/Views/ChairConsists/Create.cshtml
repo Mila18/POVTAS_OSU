@@ -45,7 +45,7 @@
         </div>
         <div class="col-4">
             <div class="form-group">
-                <div class="control-label container-sm"><b>Ученое звание</b></div>
+                <div class="control-label container-sm mb-2"><b>Ученое звание</b></div>
                 <div class="container-sm">
                     @Html.DropDownList("AcademicTitleId", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.AcademicTitleId, "", new { @class = "text-danger" })
@@ -75,7 +75,7 @@
         </div>
         <div class="col-4">
             <div class="form-group">
-                <div class="control-label container-sm"><b>Ученая степень</b></div>
+                <div class="control-label container-sm mb-2"><b>Ученая степень</b></div>
                 <div class="container-sm">
                     @Html.DropDownList("AcademicDegreeId", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.AcademicDegreeId, "", new { @class = "text-danger" })
@@ -96,7 +96,7 @@
         </div>
         <div class="col-4">
             <div class="form-group">
-                <div class="control-label container-sm"><b>Должность</b></div>
+                <div class="control-label container-sm mb-2"><b>Должность</b></div>
                 <div class="container-sm">
                     @Html.DropDownList("PositionId", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.PositionId, "", new { @class = "text-danger" })
@@ -105,7 +105,7 @@
         </div>
         <div class="col-4">
             <div class="form-group">
-                <div class="control-label container-sm"><b>Вид деятельности</b></div>
+                <div class="control-label container-sm mb-2"><b>Вид деятельности</b></div>
                 <div class="container-sm">
                     @Html.DropDownList("ActivityId", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.ActivityId, "", new { @class = "text-danger" })

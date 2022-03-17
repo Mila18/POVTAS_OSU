@@ -37,6 +37,7 @@ namespace POVTAS_OSU.Models
         [NotMapped]
         public string FullName { get { return Surname + " " + Name + " " + PatronymicName; } }
 
+        
         public int PositionId { get; set; }
         public Position Position { get; set; }
 

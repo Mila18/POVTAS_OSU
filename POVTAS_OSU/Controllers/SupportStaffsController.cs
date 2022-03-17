@@ -14,12 +14,7 @@ namespace POVTAS_OSU.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: SupportStaffs
-        public ActionResult Index()
-        {
-            var supportStaffs = db.SupportStaffs.Include(s => s.Position);
-            return View(supportStaffs.ToList());
-        }
+        
 
         // GET: SupportStaffs/Details/5
         public ActionResult Details(int? id)
@@ -36,6 +31,14 @@ namespace POVTAS_OSU.Controllers
             return View(supportStaff);
         }
 
+        [Authorize(Roles = "admin")]
+        // GET: SupportStaffs
+        public ActionResult Index()
+        {
+            var supportStaffs = db.SupportStaffs.Include(s => s.Position);
+            return View(supportStaffs.ToList());
+        }
+
         // GET: SupportStaffs/Create
         public ActionResult Create()
         {
@@ -48,10 +51,16 @@ namespace POVTAS_OSU.Controllers
         // Дополнительные сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,Education,Photo,PositionId,ChairId")] SupportStaff supportStaff)
+        public ActionResult Create([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,Education,Photo,PositionId,ChairId")] HttpPostedFileBase Photo, SupportStaff supportStaff)
         {
             if (ModelState.IsValid)
             {
+                if (Photo != null)
+                {
+                    string filename = Photo.FileName;
+                    Photo.SaveAs(Server.MapPath("/Images/" + filename));
+                    supportStaff.Photo = "/Images/" + filename;
+                }
                 db.SupportStaffs.Add(supportStaff);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -82,10 +91,17 @@ namespace POVTAS_OSU.Controllers
         // Дополнительные сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,Education,Photo,PositionId,ChairId")] SupportStaff supportStaff)
+        public ActionResult Edit([Bind(Include = "Id,Surname,Name,PatronymicName,WorkExperience,Education,Photo,PositionId,ChairId")] HttpPostedFileBase Photo, SupportStaff supportStaff, string oldPhoto)
         {
             if (ModelState.IsValid)
             {
+                if (Photo != null)
+                {
+                    string filename = Photo.FileName;
+                    Photo.SaveAs(Server.MapPath("/Images/" + filename));
+                    supportStaff.Photo = "/Images/" + filename;
+                }
+                else supportStaff.Photo = oldPhoto;
                 db.Entry(supportStaff).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
