@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Состав кафедры</h2>
+<h2>Профессорско-преподавательский состав кафедры</h2>
 
 <p>
     @Html.ActionLink("Добавить", "Create")
@@ -33,19 +33,13 @@
         <th>
             @Html.DisplayNameFor(model => model.TeachingExperience)
         </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.Education)
-            </th>*@
+       
         <th>
             @Html.DisplayNameFor(model => model.Activity.Title)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Emails)
         </th>
-
-
-
-
         <th></th>
     </tr>
 
