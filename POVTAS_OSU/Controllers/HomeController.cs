@@ -72,10 +72,9 @@ namespace POVTAS_OSU.Controllers
         public ActionResult Teachers()
         {
             var chairConsists = db.ChairConsists.Include(c => c.AcademicDegree).Include(c => c.AcademicTitle).Include(c => c.Activity).Include(c => c.Position);
-           
+            ViewBag.SupportStaffs = db.SupportStaffs.Include(d => d.Position).ToList();
             return View(chairConsists.ToList());
         }
-
 
 
         public ActionResult ResearchWorkAndActivities()

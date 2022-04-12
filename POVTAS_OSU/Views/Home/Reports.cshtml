@@ -6,39 +6,381 @@
 
 <h2>Результаты анализа востребованности новостей</h2>
 
-<table class="table text-white">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NewsType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ViewsQuantity)
-        </th>
-        <th></th>
-    </tr>
+<div class="container-md mt-3">
 
-    @foreach (var item in Model)
-    {
+    <img class="mw-100" src="~/Images/CA.jpg" />
+
+
+    <table class="table table-hover mt-3">
+        <tr style="background-color: #7abfff;">
+            <th>
+                Длина новости (количество символов)
+            </th>
+            <th>
+                Количество просмотров в неделю
+            </th>
+            <th>
+                Принадлежность к кластеру
+            </th>
+            <th>
+                Вид новости
+            </th>
+
+        </tr>
+
         <tr class="text-start">
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
+            <td class="table-light">
+                371
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
+            <td class="table-light">
+                87
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NewsType)
+            <td class="table-light">
+                4
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ViewsQuantity)
+            <td class="table-light">
+                Вакансия
             </td>
         </tr>
-    }
+        <tr class="text-start">
+            <td class="table-light">
+                307
+            </td>
+            <td class="table-light">
+                51
+            </td>
+            <td class="table-light">
+                3
+            </td>
+            <td class="table-light">
+                Мероприятие
+            </td>
+        </tr>
 
-</table>
+
+
+
+        <tr class="text-start">
+            <td class="table-light">
+                450
+            </td>
+            <td class="table-light">
+                108
+            </td>
+            <td class="table-light">
+                4
+            </td>
+            <td class="table-light">
+                Вакансия
+            </td>
+        </tr>
+
+
+
+        <tr class="text-start">
+            <td class="table-light">
+                256
+            </td>
+            <td class="table-light">
+                59
+            </td>
+            <td class="table-light">
+                3
+            </td>
+            <td class="table-light">
+                Мероприятие
+            </td>
+        </tr>
+
+        <tr class="text-start">
+            <td class="table-light">
+                562
+            </td>
+            <td class="table-light">
+                74
+            </td>
+            <td class="table-light">
+                4
+            </td>
+            <td class="table-light">
+                Вакансия
+            </td>
+        </tr>
+
+        <tr class="text-start">
+            <td class="table-light">
+                389
+            </td>
+            <td class="table-light">
+                42
+            </td>
+            <td class="table-light">
+                3
+            </td>
+            <td class="table-light">
+                Мероприятие
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                118
+            </td>
+            <td class="table-light">
+                9
+            </td>
+            <td class="table-light">
+                1
+            </td>
+            <td class="table-light">
+                Задолженность
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                498
+            </td>
+            <td class="table-light">
+                91
+            </td>
+            <td class="table-light">
+                4
+            </td>
+            <td class="table-light">
+                Вакансия
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                243
+            </td>
+            <td class="table-light">
+                65
+            </td>
+            <td class="table-light">
+                3
+            </td>
+            <td class="table-light">
+                Мероприятие
+            </td>
+        </tr>
+
+        <tr class="text-start">
+            <td class="table-light">
+                156
+            </td>
+            <td class="table-light">
+                74
+            </td>
+            <td class="table-light">
+                3
+            </td>
+            <td class="table-light">
+                Мероприятие
+            </td>
+        </tr>
+
+
+
+
+
+
+
+
+        <tr class="text-start">
+            <td class="table-light">
+                93
+            </td>
+            <td class="table-light">
+                16
+            </td>
+            <td class="table-light">
+                1
+            </td>
+            <td class="table-light">
+                Задолженность
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                198
+            </td>
+            <td class="table-light">
+                57
+            </td>
+            <td class="table-light">
+                3
+            </td>
+            <td class="table-light">
+                Мероприятие
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                89
+            </td>
+            <td class="table-light">
+                5
+            </td>
+            <td class="table-light">
+                1
+            </td>
+            <td class="table-light">
+                Задолженность
+            </td>
+        </tr>
+
+        <tr class="text-start">
+            <td class="table-light">
+                271
+            </td>
+            <td class="table-light">
+                24
+            </td>
+            <td class="table-light">
+                2
+            </td>
+            <td class="table-light">
+                Событие
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                440
+            </td>
+            <td class="table-light">
+                96
+            </td>
+            <td class="table-light">
+                4
+            </td>
+            <td class="table-light">
+                Вакансия
+            </td>
+        </tr>
+
+        <tr class="text-start">
+            <td class="table-light">
+                278
+            </td>
+            <td class="table-light">
+                31
+            </td>
+            <td class="table-light">
+                2
+            </td>
+            <td class="table-light">
+                Событие
+            </td>
+        </tr>
+
+        <tr class="text-start">
+            <td class="table-light">
+                256
+            </td>
+            <td class="table-light">
+                25
+            </td>
+            <td class="table-light">
+                2
+            </td>
+            <td class="table-light">
+                Событие
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                72
+            </td>
+            <td class="table-light">
+                12
+            </td>
+            <td class="table-light">
+                1
+            </td>
+            <td class="table-light">
+                Задолженность
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                301
+            </td>
+            <td class="table-light">
+                29
+            </td>
+            <td class="table-light">
+                2
+            </td>
+            <td class="table-light">
+                Событие
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                609
+            </td>
+            <td class="table-light">
+                83
+            </td>
+            <td class="table-light">
+                4
+            </td>
+            <td class="table-light">
+                Вакансия
+            </td>
+        </tr>
+        <tr class="text-start">
+            <td class="table-light">
+                260
+            </td>
+            <td class="table-light">
+                36
+            </td>
+            <td class="table-light">
+                2
+            </td>
+            <td class="table-light">
+                Событие
+            </td>
+        </tr>
+
+
+    </table>
+
+        @*<table class="table table-hover">
+                <tr style="background-color: #7abfff;">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NewsType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ViewsQuantity)
+                    </th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="text-start">
+                        <td class="table-light">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td class="table-light">
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td class="table-light">
+                            @Html.DisplayFor(modelItem => item.NewsType)
+                        </td>
+                        <td class="table-light">
+                            @Html.DisplayFor(modelItem => item.ViewsQuantity)
+                        </td>
+                    </tr>
+                }
+
+            </table>*@
+</div>

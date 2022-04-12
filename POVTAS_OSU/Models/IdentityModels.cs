@@ -28,6 +28,7 @@ namespace POVTAS_OSU.Models
         public DbSet<ChairConsist> ChairConsists { get; set; }
         public DbSet<SupportStaff> SupportStaffs { get; set; }
 
+
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Chair> Chairs { get; set; }
 
