@@ -27,7 +27,7 @@ namespace POVTAS_OSU.Models
         public DbSet<Activity> Activities { get; set; }
         public DbSet<ChairConsist> ChairConsists { get; set; }
         public DbSet<SupportStaff> SupportStaffs { get; set; }
-
+        
 
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Chair> Chairs { get; set; }
@@ -41,6 +41,7 @@ namespace POVTAS_OSU.Models
         public DbSet<EducationField> EducationFields  { get; set; }
         public DbSet<MaterialSupport> MaterialSupports  { get; set; }
         public DbSet<Post> Posts  { get; set; }
+        public DbSet<NewsType> NewsTypes { get; set; }
         public DbSet<TechnicalFacility> TechnicalFacilities  { get; set; }
 
 

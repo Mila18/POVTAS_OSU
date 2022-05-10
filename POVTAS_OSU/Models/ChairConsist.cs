@@ -50,7 +50,6 @@ namespace POVTAS_OSU.Models
         public string Training { get; set; }
 
         [Display(Name = "Фото")]
-        [Required(ErrorMessage = "Добавьте фото сотрудника")]
         public string Photo { get; set; }
 
         [NotMapped]

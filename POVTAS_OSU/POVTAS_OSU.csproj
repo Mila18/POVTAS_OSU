@@ -185,6 +185,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MaterialSupportsController.cs" />
+    <Compile Include="Controllers\NewsTypesController.cs" />
     <Compile Include="Controllers\PositionsController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Controllers\SupportStaffsController.cs" />
@@ -248,6 +249,14 @@
     <Compile Include="Migrations\202203160534463_NewEntitySupportStaff.Designer.cs">
       <DependentUpon>202203160534463_NewEntitySupportStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204121723424_NewsTypeModel.cs" />
+    <Compile Include="Migrations\202204121723424_NewsTypeModel.Designer.cs">
+      <DependentUpon>202204121723424_NewsTypeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205101108411_PhotoNotRequired.cs" />
+    <Compile Include="Migrations\202205101108411_PhotoNotRequired.Designer.cs">
+      <DependentUpon>202205101108411_PhotoNotRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicDegree.cs" />
     <Compile Include="Models\AcademicTitle.cs" />
@@ -265,6 +274,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MaterialSupport.cs" />
+    <Compile Include="Models\NewsType.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\SupportStaff.cs" />
@@ -550,6 +560,11 @@
     <Content Include="Views\SupportStaffs\Details.cshtml" />
     <Content Include="Views\SupportStaffs\Edit.cshtml" />
     <Content Include="Views\SupportStaffs\Index.cshtml" />
+    <Content Include="Views\NewsTypes\Create.cshtml" />
+    <Content Include="Views\NewsTypes\Delete.cshtml" />
+    <Content Include="Views\NewsTypes\Details.cshtml" />
+    <Content Include="Views\NewsTypes\Edit.cshtml" />
+    <Content Include="Views\NewsTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -603,6 +618,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203160534463_NewEntitySupportStaff.resx">
       <DependentUpon>202203160534463_NewEntitySupportStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204121723424_NewsTypeModel.resx">
+      <DependentUpon>202204121723424_NewsTypeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205101108411_PhotoNotRequired.resx">
+      <DependentUpon>202205101108411_PhotoNotRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

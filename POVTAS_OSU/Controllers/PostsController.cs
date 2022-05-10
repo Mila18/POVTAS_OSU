@@ -39,6 +39,7 @@ namespace POVTAS_OSU.Controllers
         // GET: Posts/Create
         public ActionResult Create()
         {
+            ViewBag.NewsTypeId = new SelectList(db.NewsTypes, "Id", "Title");
             return View();
         }
 
@@ -84,6 +85,7 @@ namespace POVTAS_OSU.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.NewsTypeId = new SelectList(db.NewsTypes, "Id", "Title");
             return View(post);
         }
 

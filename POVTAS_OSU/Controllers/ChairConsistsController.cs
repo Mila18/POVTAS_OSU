@@ -54,7 +54,7 @@ namespace POVTAS_OSU.Controllers
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title");
             ViewBag.ActivityId = new SelectList(db.Activities, "Id", "Title");
             ViewBag.PositionId = new SelectList(db.Positions, "Id", "Title");
-            ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
+            //ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
             ViewBag.DiscilineList = db.Disciplines.ToList();
             return View();
         }
@@ -85,7 +85,7 @@ namespace POVTAS_OSU.Controllers
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title", chairConsist.AcademicTitleId);
             ViewBag.ActivityId = new SelectList(db.Activities, "Id", "Title", chairConsist.ActivityId);
             ViewBag.PositionId = new SelectList(db.Positions, "Id", "Title", chairConsist.PositionId);
-            ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
+            //ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
             ViewBag.DiscilineList = db.Disciplines.ToList();
             return View(chairConsist);
         }
@@ -111,7 +111,7 @@ namespace POVTAS_OSU.Controllers
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title", chairConsist.AcademicTitleId);
             ViewBag.ActivityId = new SelectList(db.Activities, "Id", "Title", chairConsist.ActivityId);
             ViewBag.PositionId = new SelectList(db.Positions, "Id", "Title", chairConsist.PositionId);
-            ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
+            //ViewBag.DisciplineId = new SelectList(db.Disciplines, "Id", "Title", chairConsist.Disciplines);
             ViewBag.DiscilineList = db.Disciplines.ToList();
             return View(chairConsist);
         }
@@ -159,7 +159,7 @@ namespace POVTAS_OSU.Controllers
             ViewBag.AcademicTitleId = new SelectList(db.AcademicTitles, "Id", "Title", chairConsist.AcademicTitleId);
             ViewBag.ActivityId = new SelectList(db.Activities, "Id", "Title", chairConsist.ActivityId);
             ViewBag.PositionId = new SelectList(db.Positions, "Id", "Title", chairConsist.PositionId);
-            ViewBag.DisciplineId = new SelectList(db.Positions, "Id", "Title");
+            //ViewBag.DisciplineId = new SelectList(db.Disciplines, "Id", "Title");
             ViewBag.DiscilineList = db.Disciplines.ToList();
             return View(chairConsist);
         }

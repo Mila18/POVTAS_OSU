@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NewsType)
+            @Html.DisplayNameFor(model => model.NewsType.Title)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Photo)
@@ -45,7 +45,7 @@
         @Html.DisplayFor(modelItem => item.Date)
     </td>
     <td class="table-light">
-        @Html.DisplayFor(modelItem => item.NewsType)
+        @Html.DisplayFor(modelItem => item.NewsType.Title)
     </td>
     <td class="table-light">
         <img src="@item.Photo" width="130vw" height="100vh" />

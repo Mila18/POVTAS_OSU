@@ -2,8 +2,9 @@
 
 @{
     ViewBag.Title = "Edit";
-    List<POVTAS_OSU.Models.Discipline> disciplines = ViewBag.DiscilineList;
     string oldPhoto = Model.Photo;
+    List<POVTAS_OSU.Models.Discipline> disciplines = ViewBag.DiscilineList;
+
 }
 
 @section Scripts {
@@ -175,7 +176,7 @@
             @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label container-sm fw-bold" })
             <div class="container-sm">
                 @Html.EditorFor(model => model.Photo, new { htmlAttributes = new { type = "file" } })
-                
+                @Html.ValidationMessageFor(model => model.Photo, "", new { @class = "text-danger" })
             </div>
         </div>
 

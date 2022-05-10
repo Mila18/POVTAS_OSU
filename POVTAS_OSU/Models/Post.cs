@@ -23,8 +23,8 @@ namespace POVTAS_OSU.Models
         [Display(Name = "Количество просмотров")]
         public int ViewsQuantity { get; set; }
 
-        [Display(Name = "Вид новости")]
-        public string NewsType { get; set; }
+        //[Display(Name = "Вид новости")]
+        //public string NewsType { get; set; }
 
         [Display(Name = "Фото")]
         public string Photo { get; set; }
@@ -32,7 +32,9 @@ namespace POVTAS_OSU.Models
         [Display(Name = "Файл")]
         public string File { get; set; }
 
-
+        [Display(Name = "Вид новости")]
+        public int? NewsTypeId { get; set; }
+        public NewsType NewsType { get; set; }
 
         public int ChairID { get; set; }
         public Chair Chair { get; set; }
