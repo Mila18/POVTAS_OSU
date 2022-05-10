@@ -18,7 +18,8 @@ namespace POVTAS_OSU.Controllers
         // GET: Posts
         public ActionResult Index()
         {
-            return View(db.Posts.ToList());
+            var posts = db.Posts.Include(p => p.NewsType).OrderBy(x => x.NewsType.Title);
+            return View(posts.ToList());
         }
 
         // GET: Posts/Details/5
