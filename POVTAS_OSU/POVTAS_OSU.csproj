@@ -548,7 +548,6 @@
     <Content Include="Views\Home\StudentsAndAlumnus.cshtml" />
     <Content Include="Views\Home\Schoolchildren.cshtml" />
     <Content Include="Views\Home\ResearchWorkAndActivities.cshtml" />
-    <Content Include="Views\Home\Reports.cshtml" />
     <Content Include="Views\DocumentTypes\Create.cshtml" />
     <Content Include="Views\DocumentTypes\Delete.cshtml" />
     <Content Include="Views\DocumentTypes\Details.cshtml" />
