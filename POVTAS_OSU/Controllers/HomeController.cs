@@ -36,42 +36,45 @@ namespace POVTAS_OSU.Controllers
             ViewBag.EducationFields = db.EducationFields.ToList();
             if (Id != null)
             {
+                ViewBag.Id = Id;
                 return View(disciplines.Where(x => x.EducationFieldId.ToString() == Id).ToList());
             }
             else
             {
+                ViewBag.Id = 0;
                 return View(new List<Discipline>());
             }
            
         }
+
+        public ActionResult StudentsAndAlumnus(string Id)
+        {
+            var documents = db.Documents.Include(d => d.DocumentType).OrderBy(x => x.DocumentType.Title);
+            ViewBag.DocumentTypes = db.DocumentType.ToList();
+            if (Id != null)
+            {
+                ViewBag.Id = Id;
+                return View(documents.Where(x => x.DocumentTypeId.ToString() == Id).ToList());
+            }
+            else
+            {
+                ViewBag.Id = 0;
+                return View(new List<Document>());
+            }
+        }
+
 
         public ActionResult Reports()
         {
             return View(db.Posts);
         }
 
-        public ActionResult Teachers(/*int? id*/)
+        public ActionResult Teachers()
         {
             var chairConsists = db.ChairConsists.Include(c => c.AcademicDegree).Include(c => c.AcademicTitle).Include(c => c.Activity).Include(c => c.Position);
-            //if (id == null)
-            //{
-            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            //}
-            //ChairConsist chairConsist = db.ChairConsists.Include(c => c.AcademicDegree)
-            //                                            .Include(c => c.AcademicTitle)
-            //                                            .Include(c => c.Activity)
-            //                                            .Include(c => c.Position)
-            //                                            .Include(c => c.Disciplines)
-            //                                            .Single(x => x.Id == id);
-            //if (chairConsist == null)
-            //{
-            //    return HttpNotFound();
-            //}
-            
-            //return View(chairConsist);
+            ViewBag.SupportStaffs = db.SupportStaffs.Include(d => d.Position).ToList();
             return View(chairConsists.ToList());
         }
-
 
 
         public ActionResult ResearchWorkAndActivities()
@@ -79,11 +82,7 @@ namespace POVTAS_OSU.Controllers
             return View();
         }
 
-        public ActionResult StudentsAndAlumnus()
-        {
-            return View(db.Documents);
-        }
-
+        
         public ActionResult Schoolchildren()
         {
             return View();
@@ -94,5 +93,9 @@ namespace POVTAS_OSU.Controllers
             return View(db.EducationFields);
         }
 
+        public ActionResult Support()
+        {
+            return View();
+        }
     }
 }

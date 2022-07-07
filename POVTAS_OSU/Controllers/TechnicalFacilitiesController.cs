@@ -58,7 +58,7 @@ namespace POVTAS_OSU.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClassroomId = new SelectList(db.Classrooms, "Id", "Description", technicalFacility.ClassroomId);
+            ViewBag.ClassroomId = new SelectList(db.Classrooms, "Id", "Number");
             return View(technicalFacility);
         }
 
@@ -74,7 +74,7 @@ namespace POVTAS_OSU.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ClassroomId = new SelectList(db.Classrooms, "Id", "Description", technicalFacility.ClassroomId);
+            ViewBag.ClassroomId = new SelectList(db.Classrooms, "Id", "Number");
             return View(technicalFacility);
         }
 
@@ -91,7 +91,7 @@ namespace POVTAS_OSU.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ClassroomId = new SelectList(db.Classrooms, "Id", "Description", technicalFacility.ClassroomId);
+            ViewBag.ClassroomId = new SelectList(db.Classrooms, "Id", "Number");
             return View(technicalFacility);
         }
 

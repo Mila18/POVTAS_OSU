@@ -1,0 +1,33 @@
+﻿@model IEnumerable<POVTAS_OSU.Models.DocumentType>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Тип документа</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table table-hover">
+    <tr style="background-color: #7abfff;">
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="table-light">
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td class="table-light">
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Id }) |
+
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

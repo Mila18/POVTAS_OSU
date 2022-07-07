@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<POVTAS_OSU.Models.ChairConsist>
+
 @using POVTAS_OSU.Models
 
 @{
     ViewBag.Title = "ChairConsist";
     List<Position> position = ViewBag.Positions;
-
+    List<SupportStaff> supportStaffs = ViewBag.SupportStaffs;
 }
 
 <style>
     .ourTeam h2 {
-        color: #fff;
         margin: 0 0 20px 0;
     }
 
@@ -18,7 +18,7 @@
     }
 
         .ourTeam .i .c {
-            background: #fff;
+            background: rgba(220, 220, 220, 0.2);
             -webkit-box-shadow: 0 4px 0 #7abfff;
             -moz-box-shadow: 0 4px 0 #7abfff;
             box-shadow: 0 4px 0 #7abfff;
@@ -92,14 +92,13 @@
 
                 .ourTeam .i .c .more .socials {
                     margin: 0 0 20px 0;
-                    
                 }
 
-                   
+
 
 
             .ourTeam .i .c:hover .info {
-                display:none;
+                display: none;
             }
 
             .ourTeam .i .c:hover .more {
@@ -112,30 +111,64 @@
         <header class="text-center">
             <h2>Преподаватели кафедры </h2>
         </header>
-            <div class="row d-flex justify-content-center">
-                @foreach (var item in Model)
-                {
-                    <div class="col-xs-6 col-sm-4 col-md-3 i" style="min-width:300px; min-height:470px;">
-                        <div class="c text-center">
-                            <div class="wrap">
+        <div class="row d-flex justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-xs-6 col-sm-4 col-md-3 i" style="min-width:300px; min-height:470px;">
+                    <div class="c text-center">
+                        <div class="wrap">
 
-                                <img src="@item.Photo" alt="Image" style="min-width:300px; min-height:390px;">
+                            <img src="@item.Photo" alt="Image" style="min-width:300px; min-height:390px;">
 
-                                <div class="info">
-                                    <h3 class="name text-black">@Html.DisplayFor(modelItem => item.Surname) @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.PatronymicName)</h3>
-                                    <h4 class="position text-black">@Html.DisplayFor(modelItem => item.Position.Title), <span class="text-lowercase">@Html.DisplayFor(modelItem => item.AcademicDegree.Title)</span> </h4>
-                                </div>
-                            </div>
-                            <div class="more text-black">
-
-                                <div class="socials">
-                                    <button type="button"  class="btn btn-lg" style="background-color: #7abfff;"><a style="color:white;" href="../ChairConsists/Details/@item.Id">Подробнее</a></button>
-                                </div>
-                                
+                            <div class="info">
+                                <h3 class="name text-black">@Html.DisplayFor(modelItem => item.Surname) @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.PatronymicName)</h3>
+                                <h4 class="position text-black">@Html.DisplayFor(modelItem => item.Position.Title), <span class="text-lowercase">@Html.DisplayFor(modelItem => item.AcademicDegree.Title)</span> </h4>
                             </div>
                         </div>
+                        <div class="more text-black">
+
+                            <div class="socials">
+                                <button type="button" class="btn btn-lg" style="background-color: #7abfff;"><a style="color:white;" href="../ChairConsists/Details/@item.Id">Подробнее</a></button>
+                            </div>
+
+                        </div>
                     </div>
-                }
-            </div>
+                </div>
+            }
         </div>
+    </div>
+</div>
+
+
+<div class="container-lg">
+    <div class="section ourTeam">
+        <header class="text-center mt-5">
+            <h2>Учебно-вспомогательный персонал кафедры</h2>
+        </header>
+        <div class="row d-flex justify-content-center">
+            @foreach (var item in supportStaffs)
+            {
+                <div class="col-xs-6 col-sm-4 col-md-3 i" style="min-width:300px; min-height:470px;">
+                    <div class="c text-center">
+                        <div class="wrap">
+
+                            <img src="@item.Photo" alt="Image" style="min-width:300px; min-height:390px;">
+
+                            <div class="info">
+                                <h3 class="name text-black">@Html.DisplayFor(modelItem => item.Surname) @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.PatronymicName)</h3>
+                                <h4 class="position text-black">@Html.DisplayFor(modelItem => item.Position.Title) </h4>
+                            </div>
+                        </div>
+                        <div class="more text-black">
+
+                            <div class="socials">
+                                <button type="button" class="btn btn-lg" style="background-color: #7abfff;"><a style="color:white;" href="../SupportStaffs/Details/@item.Id">Подробнее</a></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>

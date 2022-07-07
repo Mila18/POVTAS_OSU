@@ -1,54 +1,79 @@
 ﻿@model IEnumerable<POVTAS_OSU.Models.Document>
+@using POVTAS_OSU.Models
 
 @{
     ViewBag.Title = "StudentsAndAlumnus";
+    int Id = Convert.ToInt32(ViewBag.Id);
+    List<DocumentType> documentTypes = ViewBag.DocumentTypes;
 }
 
 <h2>Студентам и выпускникам</h2>
 
-<table class="table text-white">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DocumentType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DocumentDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DocumentNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.File)
-        </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.ChairId)
-            </th>*@
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DocumentType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DocumentDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DocumentNumber)
-            </td>
-            <td>
-                <a href="@item.File">Скачать</a>
-            </td>
-           
-        </tr>
+<style>
+    .option {
+        border-radius: 10px;
+        outline: none;
     }
+</style>
+@using (Html.BeginForm("StudentsAndAlumnus", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="container-lg mb-2 mb-1">
+            <div>
+                <select class="form-select form-select-lg mb-3 " aria-label=".form-select-lg example" name="Id">
+                    <option disabled @if (Id == 0) {@Html.Raw("selected");} value="0" name="Id" class="option">Выберите тип документа</option>
+                    @foreach (var item in documentTypes)
+                    {
+                        <option name="Id" @if (Id == item.Id) { @Html.Raw("selected");} value="@item.Id"> @Html.DisplayFor(modelItem => item.Title)</option>
+                    }
+                </select>
+            </div>
+            <div><button type="submit" class="btn btn-lg btn-outline-dark">Выбрать</button></div>
+        </div>
+    </div>
 
-</table>
+}
+
+<div class="container-xxl">
+
+
+    <table class="table table-hover">
+        <tr style="background-color: #7abfff;">
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.File)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="background-color: #ededed;">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+
+                <td style="background-color: #ededed;">
+                    @Html.DisplayFor(modelItem => item.DocumentDate)
+                </td>
+                <td style="background-color: #ededed;">
+                    @Html.DisplayFor(modelItem => item.DocumentNumber)
+                </td>
+                <td style="background-color: #ededed;">
+                    <a href="@item.File">Скачать</a>
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>

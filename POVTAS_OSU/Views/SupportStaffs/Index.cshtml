@@ -1,0 +1,78 @@
+﻿@model IEnumerable<POVTAS_OSU.Models.SupportStaff>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Учебно-вспомогательный персонал кафедры</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table table-hover">
+    <tr style="background-color: #7abfff; ">
+
+        <th>
+            ФИО
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Position.Title)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatronymicName)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.WorkExperience)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Education)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.ChairId)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td class="table-light">
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td class="table-light">
+                @Html.DisplayFor(modelItem => item.Position.Title)
+            </td>
+            @*<td class="table-light">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td class="table-light">
+                    @Html.DisplayFor(modelItem => item.PatronymicName)
+                </td>*@
+            <td class="table-light">
+                @Html.DisplayFor(modelItem => item.WorkExperience)
+            </td>
+            <td class="table-light">
+                @Html.DisplayFor(modelItem => item.Education)
+            </td>
+            <td class="table-light">
+                <img src="@item.Photo" width="100 vh" height="130 vw" />
+            </td>
+            @*<td class="table-light">
+                    @Html.DisplayFor(modelItem => item.ChairId)
+                </td>*@
+            <td class="table-light">
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

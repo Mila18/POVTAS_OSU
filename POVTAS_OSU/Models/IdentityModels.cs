@@ -26,17 +26,22 @@ namespace POVTAS_OSU.Models
         public DbSet<Position> Positions { get; set; }
         public DbSet<Activity> Activities { get; set; }
         public DbSet<ChairConsist> ChairConsists { get; set; }
+        public DbSet<SupportStaff> SupportStaffs { get; set; }
+        
+
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Chair> Chairs { get; set; }
 
         public DbSet<Document> Documents { get; set; }
+        public DbSet<DocumentType> DocumentType { get; set; }
         public DbSet<CalendarOfEvent> CalendarOfEvents { get; set; }
         public DbSet<Classroom> Classrooms  { get; set; }
-        
+
         public DbSet<Discipline> Disciplines  { get; set; }
         public DbSet<EducationField> EducationFields  { get; set; }
         public DbSet<MaterialSupport> MaterialSupports  { get; set; }
         public DbSet<Post> Posts  { get; set; }
+        public DbSet<NewsType> NewsTypes { get; set; }
         public DbSet<TechnicalFacility> TechnicalFacilities  { get; set; }
 
 

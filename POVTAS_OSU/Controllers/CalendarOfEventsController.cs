@@ -18,8 +18,8 @@ namespace POVTAS_OSU.Controllers
         // GET: CalendarOfEvents
         public ActionResult Index()
         {
-            //var calendarOfEvents = db.CalendarOfEvents.Include(c => c.EventReportOf);
-            return View(db.CalendarOfEvents);
+          
+            return View(db.CalendarOfEvents.ToList());
         }
 
         // GET: CalendarOfEvents/Details/5
@@ -40,10 +40,8 @@ namespace POVTAS_OSU.Controllers
         // GET: CalendarOfEvents/Create
         public ActionResult Create()
         {
+            
             return View();
-
-            //ViewBag.EventReportId = new SelectList(db.EventReports, "Id", "Report");
-            //return View();
         }
 
         // POST: CalendarOfEvents/Create
@@ -51,7 +49,7 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Event,Date,ChairId")] HttpPostedFileBase ReportFile, CalendarOfEvent calendarOfEvent)
+        public ActionResult Create([Bind(Include = "Id,Event,Date, ReportFile")] HttpPostedFileBase ReportFile, CalendarOfEvent calendarOfEvent)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +63,6 @@ namespace POVTAS_OSU.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(calendarOfEvent);
         }
 
@@ -81,7 +78,7 @@ namespace POVTAS_OSU.Controllers
             {
                 return HttpNotFound();
             }
-            //ViewBag.EventReportId = new SelectList(db.EventReports, "Id", "Report", calendarOfEvent.EventReportId);
+   
             return View(calendarOfEvent);
         }
 
@@ -90,7 +87,7 @@ namespace POVTAS_OSU.Controllers
         // сведения см. в статье https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventReportId,Id,Event,Date,ChairId")] HttpPostedFileBase ReportFile, CalendarOfEvent calendarOfEvent, string oldFile)
+        public ActionResult Edit([Bind(Include = "Id,Event,Date,ReportFile")] HttpPostedFileBase ReportFile, CalendarOfEvent calendarOfEvent, string oldFile)
         {
             if (ModelState.IsValid)
             {
@@ -105,16 +102,8 @@ namespace POVTAS_OSU.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(calendarOfEvent);
 
-            //if (ModelState.IsValid)
-            //{
-            //    db.Entry(calendarOfEvent).State = EntityState.Modified;
-            //    db.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-            //ViewBag.EventReportId = new SelectList(db.EventReports, "Id", "Report", calendarOfEvent.EventReportId);
-            //return View(calendarOfEvent);
+            return View(calendarOfEvent);
         }
 
         // GET: CalendarOfEvents/Delete/5

@@ -18,7 +18,8 @@ namespace POVTAS_OSU.Controllers
         // GET: Posts
         public ActionResult Index()
         {
-            return View(db.Posts.ToList());
+            var posts = db.Posts.Include(p => p.NewsType).OrderBy(x => x.NewsType.Title);
+            return View(posts.ToList());
         }
 
         // GET: Posts/Details/5
@@ -39,6 +40,7 @@ namespace POVTAS_OSU.Controllers
         // GET: Posts/Create
         public ActionResult Create()
         {
+            ViewBag.NewsTypeId = new SelectList(db.NewsTypes, "Id", "Title");
             return View();
         }
 
@@ -84,6 +86,7 @@ namespace POVTAS_OSU.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.NewsTypeId = new SelectList(db.NewsTypes, "Id", "Title");
             return View(post);
         }
 

@@ -8,7 +8,6 @@
 
 <h3>Вы уверены, что хотите удалить эту запись?</h3>
 <div>
-    <h4>AcademicDegree</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -25,8 +24,13 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Удалить" class="btn btn-primary" /> 
+            
         </div>
+
+        <div class="mt-3">
+            @Html.ActionLink("Назад", "Index")
+        </div>
+
     }
 </div>

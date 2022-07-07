@@ -9,8 +9,8 @@
 <p>
     @Html.ActionLink("Добавить", "Create")
 </p>
-<table class="table text-white">
-    <tr>
+<table class="table table-hover">
+    <tr style="background-color: #7abfff;">
 
         @*<th>
             @Html.DisplayNameFor(model => model.Id)
@@ -33,18 +33,18 @@
     @*<td>
             @Html.DisplayFor(modelItem => item.Id)
         </td>*@
-    <td>
+    <td class="table-light">
         @Html.DisplayFor(modelItem => item.Event)
     </td>
-    <td>
+    <td class="table-light">
         @Html.DisplayFor(modelItem => item.Date)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ReportFile)
+    <td class="table-light">
+        <a href="@item.ReportFile">Скачать</a>
     </td>
-    <td>
+    <td class="table-light">
         @Html.ActionLink("Редактирование", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Подробнее", "Details", new { id = item.Id }) |
+        @*@Html.ActionLink("Подробнее", "Details", new { id = item.Id }) |*@
         @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
     </td>
 </tr>

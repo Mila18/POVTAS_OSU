@@ -12,14 +12,20 @@ namespace POVTAS_OSU.Models
         public int Id { get; set; }
         [Display(Name = "Наименование")]
         public string Title { get; set; }
-        [Display(Name = "Тип документа")]
-        public string DocumentType { get; set; }
+        //[Display(Name = "Тип документа")]
+        //public string DocumentType { get; set; }
         [Display(Name = "Дата документа")]
         public string DocumentDate { get; set; }
         [Display(Name = "Номер документа")]
         public string DocumentNumber { get; set; }
         [Display(Name = "Файл")]
         public string File { get; set; }
+
+
+        [Display(Name = "Тип документа")]
+        public int? DocumentTypeId { get; set; }
+        public DocumentType DocumentType { get; set; }
+
 
 
         public int ChairId { get; set; }

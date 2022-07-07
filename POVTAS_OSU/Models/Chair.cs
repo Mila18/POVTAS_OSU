@@ -15,6 +15,9 @@ namespace POVTAS_OSU.Models
         {
             //Осуществление связи 1:m между таблицами "Кафедра" и "Состав кафедры"
             ChairConsists = new List<ChairConsist>();
+
+            //Осуществление связи 1:m между таблицами "Кафедра" и "Вспомогательный персонал"
+            SupportStaffs = new List<SupportStaff>();
             //Осуществление связи 1:m между таблицами "Кафедра" и "Календарь мероприятий"
             CalendarOfEvents = new List<CalendarOfEvent>();
             //Осуществление связи 1:m между таблицами "Кафедра" и "Новости"
@@ -44,6 +47,9 @@ namespace POVTAS_OSU.Models
 
         //Осуществление связи 1:m между таблицами "Кафедра" и "Состав кафедры"
         public ICollection<ChairConsist> ChairConsists;
+
+        //Осуществление связи 1:m между таблицами "Кафедра" и "Вспомогательный персонал"
+        public ICollection<SupportStaff> SupportStaffs;
 
         //Осуществление связи 1:m между таблицами "Кафедра" и ""
         public ICollection<CalendarOfEvent> CalendarOfEvents ;

@@ -14,14 +14,6 @@
 
 
         <dt>
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Event)
         </dt>
 
@@ -47,11 +39,15 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            <input type="submit" value="Удалить" class="btn btn-primary" />
+        </div>
+
+        <div class="mt-3">
             @Html.ActionLink("Назад", "Index")
         </div>
     }

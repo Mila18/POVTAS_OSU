@@ -1,0 +1,92 @@
+﻿@model POVTAS_OSU.Models.SupportStaff
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Учебно-вспомогательный персонал кафедры</h2>
+
+<h3>Вы уверены, что хотите удалить эту запись?</h3>
+<div>
+    <h4>Удаление</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Position.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatronymicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatronymicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkExperience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkExperience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Education)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Education)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChairId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChairId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-primary" />
+        </div>
+
+        <div class="mt-3">
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

@@ -19,9 +19,42 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
+
+    @*<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">*@
+    @*<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">*@
+    @*<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">*@
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+
+     <link rel="canonical" href="https://getbootstrap.su/docs/5.0/examples/carousel/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
 </head>
-<body class="bg-dark text-white text-center container-fluid">
+<body class="bg-light text-black text-center">
     <style>
+        .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+
         #myBtn {
             display: none; /* Hidden by default */
             position: fixed; /* Fixed/sticky position */
@@ -40,12 +73,12 @@
             #myBtn:hover {
                 /*background-color: #555;*/ /* Add a dark-grey background on hover */
                 color: #7abfff;
-                ;
+
             }
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-light ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Кафедра ПОВТАС</a>
+            <a class="navbar-brand" href="../../Home/Index">Кафедра ПОВТАС</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,24 +86,22 @@
             <div class="collapse navbar-collapse" id="navbarColor02">
 
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../Home/Index">Главная</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../Home/Contact">Контакты</a>
-                    </li>
+                    @*<li class="nav-item">
+            <a class="nav-link" href="../../Home/Index">Главная</a>
+        </li>*@
+
                     <li class="nav-item">
                         <a class="nav-link" href="../../Home/Posts">Новости</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../Home/Disciplines/1">Дисциплины</a>
+                        <a class="nav-link" href="../../Home/Disciplines">Дисциплины</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../Home/Teachers">Преподаватели</a>
+                        <a class="nav-link" href="../../Home/Teachers">Коллектив кафедры</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    @*<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            Меню
+                            Деятельность кафедры
                         </a>
                         <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item bg-dark text-light" href="../../Home/EducationalPrograms">Образовательные программы</a>
@@ -78,6 +109,9 @@
                             <a class="dropdown-item bg-dark text-light" href="../../Home/StudentsAndAlumnus">Студентам и выпускникам</a>
                             <a class="dropdown-item bg-dark text-light" href="../../Home/Schoolchildren">Школьникам</a>
                         </div>
+                    </li>*@
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../Home/Contact">Контакты</a>
                     </li>
 
                     @if (User.IsInRole("admin"))
@@ -91,7 +125,8 @@
                                 <li><a class="dropdown-item bg-dark text-light" href="../../AcademicTitles/Index">Ученое звание</a></li>
                                 <li><a class="dropdown-item bg-dark text-light" href="../../Activities/Index">Виды деятельности</a></li>
                                 <li><a class="dropdown-item bg-dark text-white" href="../../CalendarOfEvents/Index">Календарь мероприятий</a></li>
-                                <li><a class="dropdown-item bg-dark text-white" href="../../ChairConsists/Index">Состав кафедры</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="../../ChairConsists/Index">ППС кафедры</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="../../SupportStaffs/Index">УВП кафедры</a></li>
                                 <li><a class="dropdown-item bg-dark text-white" href="../../Classrooms/Index">Аудитории</a></li>
                                 <li><a class="dropdown-item bg-dark text-white" href="../../Posts/Index">Новости</a></li>
                                 <li><a class="dropdown-item bg-dark text-white" href="../../Contacts/Index">Контакты</a></li>
@@ -99,11 +134,13 @@
                                 <li><a class="dropdown-item bg-dark text-white" href="../../EducationFields/Index">Направления подготовки</a></li>
                                 <li><a class="dropdown-item bg-dark text-white" href="../../MaterialSupports/Index">МТО</a></li>
                                 <li><a class="dropdown-item bg-dark text-white" href="../../Positions/Index">Должности</a></li>
+                                <li><a class="dropdown-item bg-dark text-white" href="../../DocumentTypes/Index">Тип документа</a></li>
                                 <li><a class="dropdown-item bg-dark text-white" href="../../Documents/Index">Документы</a></li>
                                 <li><a class="dropdown-item bg-dark text-white" href="../../TechnicalFacilities/Index">Техническое оснащение</a></li>
 
                             </ul>
                         </li>
+                       
                     }
                    
                     <li class="nav-item">
@@ -143,16 +180,16 @@
     <hr />
 
     <!-- Footer -->
-    <footer class="page-footer font-small blue-grey lighten-5">
+    <footer class="page-footer font-small blue-grey lighten-5" style="background-color:#ededed;">
 
-        <div style="background-color: #7abfff; ">
+        <div style="background-color: #7abfff;">
             <div class="container">
 
                 <!-- Grid row-->
                 <div class="row py-4 d-flex align-items-center">
 
                     <!-- Grid column -->
-                    <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <div class="col-md-6 col-lg-5 text-center text-md-left text-light mb-4 mb-md-0">
                         <h6 class="mb-0">Присоединяйтесь к нам в социальных сетях!</h6>
                     </div>
                     <!-- Grid column -->
@@ -186,7 +223,7 @@
         <div class="container text-center text-md-left mt-5">
 
             <!-- Grid row -->
-            <div class="row mt-3 dark-grey-text">
+            <div class="row mt-3">
 
                 <!-- Grid column -->
                 <!--<div class="col-md-3 col-lg-4 col-xl-3 mb-4">-->
@@ -206,13 +243,13 @@
                     <h6 class="text-uppercase font-weight-bold">Полезные ссылки</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a class="text-light" href="http://www.osu.ru/doc/90">Олимпиады</a>
+                        <a class="text-black" href="http://www.osu.ru/doc/90">Олимпиады</a>
                     </p>
                     <p>
-                        <a class="text-light" href="http://www.osu.ru/doc/2410">Молодежные научные и научно-технические мероприятия</a>
+                        <a class="text-black" href="http://www.osu.ru/doc/2410">Молодежные научные и научно-технические мероприятия</a>
                     </p>
                     <p>
-                        <a class="text-light" href="http://ciscotrain.osu.ru">Сетевая академия CISCO</a>
+                        <a class="text-black" href="http://ciscotrain.osu.ru">Сетевая академия CISCO</a>
                     </p>
 
 
@@ -225,13 +262,13 @@
                     <h6 class="text-uppercase font-weight-bold">Полезные ссылки</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
-                        <a class="text-light" href="http://www.osu.ru">Сайт Оренбургского государственного университета</a>
+                        <a class="text-black" href="http://www.osu.ru">Сайт Оренбургского государственного университета</a>
                     </p>
                     <p>
-                        <a class="text-light" href="http://abiturient.osu.ru">Абитуриенту @DateTime.Now.Year</a>
+                        <a class="text-black" href="http://abiturient.osu.ru">Абитуриенту @DateTime.Now.Year</a>
                     </p>
                     <p>
-                        <a class="text-light" href="http://artlib.osu.ru/site_new/">Научная библиотека ОГУ</a>
+                        <a class="text-black" href="http://artlib.osu.ru/site_new/">Научная библиотека ОГУ</a>
                     </p>
 
 

@@ -180,12 +180,15 @@
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\DisciplinesController.cs" />
     <Compile Include="Controllers\DocumentsController.cs" />
+    <Compile Include="Controllers\DocumentTypesController.cs" />
     <Compile Include="Controllers\EducationFieldsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MaterialSupportsController.cs" />
+    <Compile Include="Controllers\NewsTypesController.cs" />
     <Compile Include="Controllers\PositionsController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
+    <Compile Include="Controllers\SupportStaffsController.cs" />
     <Compile Include="Controllers\TechnicalFacilitiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -230,9 +233,29 @@
     <Compile Include="Migrations\202112170545503_Posts+2.Designer.cs">
       <DependentUpon>202112170545503_Posts+2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202202210658090_DeleteEventReports.cs" />
-    <Compile Include="Migrations\202202210658090_DeleteEventReports.Designer.cs">
-      <DependentUpon>202202210658090_DeleteEventReports.cs</DependentUpon>
+    <Compile Include="Migrations\202202211334561_NewFieldInCalendarOfEvents.cs" />
+    <Compile Include="Migrations\202202211334561_NewFieldInCalendarOfEvents.Designer.cs">
+      <DependentUpon>202202211334561_NewFieldInCalendarOfEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203020423353_DocTypeNewClass.cs" />
+    <Compile Include="Migrations\202203020423353_DocTypeNewClass.Designer.cs">
+      <DependentUpon>202203020423353_DocTypeNewClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203141359417_notNullPhoto.cs" />
+    <Compile Include="Migrations\202203141359417_notNullPhoto.Designer.cs">
+      <DependentUpon>202203141359417_notNullPhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203160534463_NewEntitySupportStaff.cs" />
+    <Compile Include="Migrations\202203160534463_NewEntitySupportStaff.Designer.cs">
+      <DependentUpon>202203160534463_NewEntitySupportStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204121723424_NewsTypeModel.cs" />
+    <Compile Include="Migrations\202204121723424_NewsTypeModel.Designer.cs">
+      <DependentUpon>202204121723424_NewsTypeModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205101108411_PhotoNotRequired.cs" />
+    <Compile Include="Migrations\202205101108411_PhotoNotRequired.Designer.cs">
+      <DependentUpon>202205101108411_PhotoNotRequired.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AcademicDegree.cs" />
@@ -246,12 +269,15 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Discipline.cs" />
     <Compile Include="Models\Document.cs" />
+    <Compile Include="Models\DocumentType.cs" />
     <Compile Include="Models\EducationField.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MaterialSupport.cs" />
+    <Compile Include="Models\NewsType.cs" />
     <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\SupportStaff.cs" />
     <Compile Include="Models\TechnicalFacility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -522,7 +548,22 @@
     <Content Include="Views\Home\StudentsAndAlumnus.cshtml" />
     <Content Include="Views\Home\Schoolchildren.cshtml" />
     <Content Include="Views\Home\ResearchWorkAndActivities.cshtml" />
-    <Content Include="Views\Home\Reports.cshtml" />
+    <Content Include="Views\DocumentTypes\Create.cshtml" />
+    <Content Include="Views\DocumentTypes\Delete.cshtml" />
+    <Content Include="Views\DocumentTypes\Details.cshtml" />
+    <Content Include="Views\DocumentTypes\Edit.cshtml" />
+    <Content Include="Views\DocumentTypes\Index.cshtml" />
+    <Content Include="Views\Home\Support.cshtml" />
+    <Content Include="Views\SupportStaffs\Create.cshtml" />
+    <Content Include="Views\SupportStaffs\Delete.cshtml" />
+    <Content Include="Views\SupportStaffs\Details.cshtml" />
+    <Content Include="Views\SupportStaffs\Edit.cshtml" />
+    <Content Include="Views\SupportStaffs\Index.cshtml" />
+    <Content Include="Views\NewsTypes\Create.cshtml" />
+    <Content Include="Views\NewsTypes\Delete.cshtml" />
+    <Content Include="Views\NewsTypes\Details.cshtml" />
+    <Content Include="Views\NewsTypes\Edit.cshtml" />
+    <Content Include="Views\NewsTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -565,8 +606,23 @@
     <EmbeddedResource Include="Migrations\202112170545503_Posts+2.resx">
       <DependentUpon>202112170545503_Posts+2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202202210658090_DeleteEventReports.resx">
-      <DependentUpon>202202210658090_DeleteEventReports.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202202211334561_NewFieldInCalendarOfEvents.resx">
+      <DependentUpon>202202211334561_NewFieldInCalendarOfEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203020423353_DocTypeNewClass.resx">
+      <DependentUpon>202203020423353_DocTypeNewClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203141359417_notNullPhoto.resx">
+      <DependentUpon>202203141359417_notNullPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203160534463_NewEntitySupportStaff.resx">
+      <DependentUpon>202203160534463_NewEntitySupportStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204121723424_NewsTypeModel.resx">
+      <DependentUpon>202204121723424_NewsTypeModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205101108411_PhotoNotRequired.resx">
+      <DependentUpon>202205101108411_PhotoNotRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
